@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-image: url('bg.png'); */
+  /* height: 100vh; */
+  background-position: right center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  background-color: rgb(69, 69, 70) !important;
+  opacity: '60%' !important;
+}
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  /* background-image: url('bg.png'); */
+  border: 5px solid red;
+}
+.top_row {
+  text-align: center;
+  display: flex;
+  width: 100%;
+}
+.connection_model .modal-dialog {
+  float: right !important;
+}
+.top_row .left {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  /* border-bottom: 2px solid white; */
+  border-right: 2px solid white;
+  display: block;
+}
+.left:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+.right:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+.top_row .right {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  /* border-bottom: 2px solid white; */
+  display: block;
+}
+.wallet .row {
+  text-align: center;
+  border-top: 5px solid white;
+}
+.smallIcons {
+  text-align: center;
+}
+.smallIcons img {
+  height: 30px !important;
+  width: auto !important;
+  margin: 0px 8px;
+}
+.bottom_bar {
+  height: 230px;
+}
+.bottom_bar:hover {
+  background-color: white;
+  color: black !important;
+  border-radius: 5px;
+}
+.bottom_bar hover {
+  background-color: white;
+  color: black !important;
+  border-radius: 5px;
+}
+.modal-header {
+  border-bottom: 1px solid black !important;
+  
+}
+.modal-content {
+  background-color: #ffcc99;
+}
+
+#walletconnect-wrapper {
+  -webkit-user-select: none;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  user-select: none;
+  width: 100%;
+  z-index: 99999999999999;
+  color: black;
+}
