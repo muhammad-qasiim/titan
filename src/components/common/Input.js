@@ -1,70 +1,20 @@
-import { getIn } from "formik";
-import React, { useMemo } from "react";
+import { BsAsterisk } from "react-icons/bs";
 
-const getFieldCSSClasses = (touched, errors) => {
-  const classes = ["form-control"];
-
-  if (touched && errors) {
-    classes.push("is-invalid");
-  }
-
-  return classes.join(" ");
-};
-
-const Input = React.memo(
-  ({
-    field, // { name, value, onChange, onBlur }
-    form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-    label,
-    id,
-    withFeedbackLabel = true,
-    customFeedbackLabel,
-    type = "text",
-    validator,
-    className,
-    ...props
-  }) => {
-    const { onChange, rest } = useMemo(() => {
-      const { onChange, ...rest } = field;
-      return { onChange, rest };
-    }, [field]);
-
-    const { fieldError, fieldTouched } = useMemo(() => {
-      return {
-        fieldError: getIn(errors, field.name),
-        fieldTouched: getIn(touched, field.name),
-      };
-    }, [field, errors, touched]);
-
-    const classes = useMemo(() => {
-      return className
-        ? `${getFieldCSSClasses(fieldTouched, fieldError)} ${className}`
-        : getFieldCSSClasses(fieldTouched, fieldError);
-    }, [className, fieldError, fieldTouched]);
-
-    const handleChange = (e) => {
-      if (validator) {
-        validator({ e, onChange });
-      } else {
-        onChange(e);
-      }
-    };
-
+const Input = ({ label, type, required, value, className, InputclassName, placeholder, startAdorment, handleChange, name, errorMessage }) => {
     return (
-      <>
-        <input
-          id={id}
-          type={type}
-          className={classes}
-          onChange={handleChange}
-          {...rest}
-          {...props}
-        />
-        {label && <label htmlFor={id}>{label}</label>}
-        {fieldError && <div class="invalid-feedback" style={{ textAlign: 'left' }}>{fieldError}</div>}
-      </>
-    );
-  }
-);
+        <section>
+            {label && (<> <label className="text-gray-800 font-medium flex items-start gap-1 mb-6" htmlFor="#">{label}{required && <BsAsterisk className="text-8 text-red-600 relative top-1" />}</label> </>)}
+            <section className="relative">
+                <span className="absolute top-2/4 left-2 -translate-y-2/4 text-gray-500">
+                    {startAdorment}
+                </span>
+                <div className={className}>
+                    <input name={name} type={type ? type : "text"} onChange={handleChange} value={value} className={`w-full h-44 py-18 text-14 pr-16 ${startAdorment ? 'pl-32' : 'pl-16'} ${errorMessage && 'input-error'} ${InputclassName}`} placeholder={placeholder} />
+                    {errorMessage && <p className="text-red-700 text-10 mt-4 ml-2"> {errorMessage} </p>}
+                </div>
+            </section>
+        </section>
+    )
+}
 
-export { Input };
+export default Input;
