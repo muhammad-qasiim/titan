@@ -13,7 +13,7 @@ const Navbar = () => {
     const [toggleSearch, setToggleSearch] = useState(false);
     const [toggleSidebarNav, setToggleSidebarNav] = useState(false);
 
-    const [activeLink, setActiveLink] = useState('Trending');
+    const [activeLink, setActiveLink] = useState('');
     const Navigation = [{ placeholder: 'Events', path: '/events' }, { placeholder: 'Profile', path: '/profile' }, { placeholder: 'Connect Wallet', path: '/connect-wallet' }, { placeholder: 'Settings', path: '/settings' }]
 
     return (
@@ -21,7 +21,7 @@ const Navbar = () => {
 
             <nav className="sticky h-71 top-0 bg-white shadow-xl" style={{ zIndex: '999' }}>
                 <div className="flex h-71 justify-between items-center mx-auto px-24 lg:px-99">
-                    <Link to="/"> <span className="self-center text-xl text-red-500 font-semibold whitespace-nowrap flex items-center gap-2">
+                    <Link to="/"> <span className="self-center text-xl text-primary font-semibold whitespace-nowrap flex items-center gap-2">
                         titan</span> </Link>
 
                     <div className="flex xl:order-1">
@@ -47,12 +47,12 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden justify-between items-center w-full xl:flex xl:w-auto xl:order-2" id="mobile-menu-3">
-                        <ul className="flex flex-col items-center mt-4 xl:flex-row xl:space-x-8 xl:mt-0 xl:text-sm xl:font-medium">
+                        <ul className="flex flex-col items-center xl:flex-row xl:space-x-8 xl:mt-0 xl:text-sm xl:font-medium">
                             {
                                 Navigation?.map(item => (
                                     <li onClick={() => setActiveLink(item?.placeholder)}>
                                         <Link to={item?.path}>
-                                            <span className={`relative text-xl border-b-2 font-light border-transparent cursor-pointer transition-all text-gray-700 hover:text-gray-900 ${activeLink === item?.placeholder && 'active text-gray-800 after:-bottom-6'}`}>
+                                            <span className={`relative text-xl border-b-2 font-light border-transparent cursor-pointer transition-all text-gray-700 hover:text-red-600 ${activeLink === item?.placeholder && 'text-red-600'}`}>
                                                 {item?.placeholder}
                                             </span>
                                         </Link>

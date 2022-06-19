@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
 
     return (
-        <footer className="bg-gray-800 mt-99">
+        <footer className="bg-gray-800">
 
             <section className="container mx-auto px-24 lg:px-99 py-60">
 
@@ -12,10 +12,10 @@ const Footer = () => {
                     <div className="md:mb-0 w-auto md:w-2/6 mb-24">
                         <Link to="/">
                             <h6 className="text-2xl font-semibold text-white mb-8 flex items-center gap-2">
-                                titan</h6>
+                            TITAN</h6>
                         </Link>
                         <br />
-                        <span className="text-gray-400">The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.
+                        <span className="text-gray-400 w-2/6">The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.
                         </span>
                     </div>
                     <div className="grid grid-cols-2 gap-10 sm:gap-6 sm:grid-cols-3">
@@ -60,7 +60,7 @@ const Footer = () => {
             </section>
 
             <section className="container mx-auto px-24 lg:px-99 pt-16 pb-42 md:flex md:items-center text-center md:justify-between">
-                <span className="text-sm text-gray-400 sm:text-center ml-8">© 2022 META Factory™ All Rights Reserved.</span>
+                <span className="text-sm text-gray-400 sm:text-center ml-8">© 2022 TITAN Marketplace™ All Rights Reserved.</span>
                 <div className="flex mt-4 space-x-6 justify-center md:mt-0">
                     <span className="cursor-pointer text-gray-400 text-14 hover:underline transition-all">Privacy Policy</span>
                     <span className="cursor-pointer text-gray-400 text-14 hover:underline transition-all">Terms of Service</span>
