@@ -14,12 +14,13 @@ const Footer = () => {
                             <h6 className="text-2xl font-semibold text-white mb-8 flex items-center gap-2">
                                 titan</h6>
                         </Link>
+                        <br />
                         <span className="text-gray-400">The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.
                         </span>
                     </div>
                     <div className="grid grid-cols-2 gap-10 sm:gap-6 sm:grid-cols-3">
                         <div className="mb-24">
-                            <h2 className="text-sm font-semibold text-gray-900 uppercase dark:text-white mb-8">Marketplace</h2>
+                            <h2 className="text-sm font-semibold text-gray-200 uppercase dark:text-white mb-8">Marketplace</h2>
                             <ul className="text-gray-600 dark:text-gray-400">
                                 <li>
                                     <span className="text-gray-400 font-light transition-all hover:underline cursor-pointer">Solana NFTs</span>
@@ -33,7 +34,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="mb-24">
-                            <h2 className="text-sm font-semibold text-gray-900 uppercase dark:text-white mb-8">Resources</h2>
+                            <h2 className="text-sm font-semibold text-gray-200 uppercase dark:text-white mb-8">Resources</h2>
                             <ul className="text-gray-600 dark:text-gray-400">
                                 <li className="mb-4">
                                     <span className="text-gray-400 font-light transition-all hover:underline cursor-pointer">Help Center</span>
@@ -44,7 +45,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="mb-24">
-                            <h2 className="text-sm font-semibold text-gray-900 uppercase dark:text-white mb-8">Legal</h2>
+                            <h2 className="text-sm font-semibold text-gray-200 uppercase dark:text-white mb-8">Legal</h2>
                             <ul className="text-gray-600 dark:text-gray-400">
                                 <li className="mb-4">
                                     <span className="text-gray-400 font-light transition-all hover:underline cursor-pointer">Privacy Policy</span>
