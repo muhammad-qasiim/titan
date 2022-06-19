@@ -1,5 +1,4 @@
 import ReactModal from "react-modal"
-import { useMediaQuery } from 'react-responsive'
 import Input from '../components/common/Input' 
 
 const ForgetPassword = ({ isOpen, setIsOpen }) => {
@@ -16,7 +15,7 @@ const ForgetPassword = ({ isOpen, setIsOpen }) => {
                 onRequestClose={() => setIsOpen(false)}
                 style={customStyles}
             >
-                <main className='auth-container max-w-md mx-auto' style={{boxShadow: 'none'}}>
+                <main className='auth-container max-w-lg mx-auto' style={{boxShadow: 'none'}}>
                     <p className="text-center text-gray-600 mb-36"> Type in your email and we will send you instructions on how to reset your password. </p>
                     <div className='w-full flex flex-col md:flex-row items-center gap-3 mb-28'>
                         <div className="w-full">

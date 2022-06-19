@@ -22,7 +22,7 @@ const SignUp = () => {
                 <div className='SocialButton text-gray-600 font-medium rounded-5 mb-16'><img src="/assets/image/fb.svg" alt="" /> Log in with Facebook</div>
             </main>
 
-            <p className="text-center text-red-600 transition-all hover:text-red-700 mt-28"> <span className='text-gray-600'>Already have an account?</span> <Link to="/signin"> <span className='cursor-pointer'> Sign in now.  </span> </Link> </p>
+            <p className="text-center mt-28"> <span className='text-gray-600'>Already have an account?</span> <Link to="/signin"> <span className='cursor-pointer text-red-600 transition-all hover:text-red-700'> Sign in now.  </span> </Link> </p>
 
         </>
     )

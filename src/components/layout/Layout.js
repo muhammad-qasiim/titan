@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 import ScrollToTop from "../common/ScrollToTop";
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
         pauseOnHover
       /> */}
       <div>{children && children}</div>
+      <Footer />
     </ScrollToTop>
   );
 };

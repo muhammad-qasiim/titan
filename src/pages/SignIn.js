@@ -24,7 +24,7 @@ const SignIn = () => {
                 <div className='SocialButton text-gray-600 font-medium rounded-5 mb-16'><img src="/assets/image/fb.svg" alt="" /> Log in with Facebook</div>
             </main>
 
-            <p className="text-center text-red-600 transition-all hover:text-red-700 mt-28"> <span className='text-gray-600'>Don‘t have an account?</span> <Link to="/signup"><span className='cursor-pointer'> Sign up now. </span> </Link>  </p>
+            <p className="text-center mt-28"> <span className='text-gray-600'>Don‘t have an account?</span> <Link to="/signup"><span className='cursor-pointer text-red-600 transition-all hover:text-red-700'> Sign up now. </span> </Link>  </p>
 
             <ForgetPassword isOpen={isOpen} setIsOpen={setIsOpen} />
 
