@@ -10,7 +10,7 @@ const SignIn = () => {
         <>
 
             <main className='auth-container max-w-md mx-auto'>
-                <h6 className="text-xl font-semibold whitespace-nowrap flex items-center justify-center gap-2 mt-8 mb-34">
+                <h6 className="text-xl font-semibold text-red-500 whitespace-nowrap flex items-center justify-center gap-2 mt-8 mb-34">
                     titan
                 </h6>
                 <div className='w-full'>
