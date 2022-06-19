@@ -19,23 +19,23 @@ const CollectionItem = () => {
                 </Link>
 
                 <footer className='text-center py-14 px-12'>
-                    <Link to="/single_nft">
+                    <Link className="w-full" to="/single_nft">
 
                         <div className="flex items-center justify-between gap-2 mt-4 mb-8">
-                            <h6 className="flex items-center gap-2 justify-center mt-4 text-md leading-relaxed text-gray-700 cursor-pointer font-medium transition-all hover:text-gray-900"> Otherdeed for Otherside <GoVerified className="text-blue-500 text-16" /> </h6>
+                            <h6 className="flex items-center gap-2 justify-center text-md leading-relaxed text-gray-700 cursor-pointer font-medium transition-all hover:text-gray-900"> Otherdeed for Otherside <GoVerified className="text-blue-500 text-16" /> </h6>
                             <span className="text-14 text-gray-600">Top Bid</span>
                         </div>
                         <div className="flex items-center justify-between gap-2 mt-4 mb-8">
-                            <h6 className="flex items-center gap-2 justify-center mt-4 text-sm leading-relaxed text-gray-600 cursor-pointer font-medium transition-all hover:text-gray-900"> 58192 </h6>
+                            <h6 className="flex items-center gap-2 justify-center text-sm leading-relaxed text-gray-600 cursor-pointer font-medium transition-all hover:text-gray-900"> 58192 </h6>
                             <span className="text-14 text-gray-700 font-bold flex items-center gap-2">
                                 <img className="w-10" src="https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg" alt="" />
-                                5.5</span>
+                                5.2</span>
                         </div>
                         <div className="flex justify-end mb-14">
                             <span className="text-14 text-gray-700 font-bold flex items-center gap-2">
                                 <span className="text-gray-500 font-light text-12">Offers for: </span>
                                 <img className="w-10" src="https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg" alt="" />
-                                5.5</span>
+                                3.7</span>
                         </div>
                     </Link>
                     <section className="flex items-center justify-between gap-2 mb-8 border-t pt-16 mt-12 relative">

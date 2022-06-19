@@ -14,9 +14,6 @@ const NFT = () => {
     return (
         <>
             <section className="container mx-auto px-24 lg:px-99 pt-32 pb-99 mb-99 w-full lg:w-3/4">
-                <div className='flex justify-end mb-16 border-b border-gray-300 pb-18'>
-                    <button className="bg-red-500 text-white px-52 py-10 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px mt-8 font-bold flex items-center gap-3" > Sell</button>
-                </div>
 
                 <main>
                     <section className="flex flex-col xl:flex-row items-start gap-0 xl:gap-6">
@@ -25,7 +22,7 @@ const NFT = () => {
                             {/* mobile only */}
                             <section className='block xl:hidden'>
                                 <section className='flex items-center gap-4 justify-between'>
-                                    <span className='text-red-500 text-18 flex items-center gap-3'>BEANZ Official <GoVerified className="text-blue-500 text-16" /></span>
+                                    <span className='text-red-500 text-18 flex items-center gap-3'>Party Ape Billionaire Club <GoVerified className="text-blue-500 text-16" /></span>
                                     <section className="flex justify-center items-center my-8">
                                         <div className="grid place-items-center custom-shadow text-gray-500 text-center px-20 h-40 w-56 cursor-pointer rounded-tl-8 rounded-bl-8 border">
                                             <IoMdRefresh size="18" />
@@ -38,7 +35,7 @@ const NFT = () => {
                                         </div>
                                     </section>
                                 </section>
-                                <h3 className="text-36 font-semibold mb-2 text-black leading-58">Bean #2409</h3>
+                                <h3 className="text-36 font-semibold mb-2 text-black leading-58">Billionaire #2529</h3>
                             </section>
                             {/*  */}
 
@@ -60,7 +57,7 @@ const NFT = () => {
                             {/* desktop only */}
                             <section className='hidden xl:block'>
                                 <section className='md:flex items-center gap-4 justify-between'>
-                                    <span className='text-red-500 text-18 flex items-center gap-3'>BEANZ Official <GoVerified className="text-blue-500 text-16" /></span>
+                                    <span className='text-red-500 text-18 flex items-center gap-3'>Party Ape Billionaire Club <GoVerified className="text-blue-500 text-16" /></span>
                                     <section className="flex justify-center items-center my-8">
                                         <div className="grid place-items-center custom-shadow text-gray-500 text-center px-20 h-40 w-56 cursor-pointer rounded-tl-8 rounded-bl-8 border">
                                             <IoMdRefresh size="18" />
@@ -73,12 +70,12 @@ const NFT = () => {
                                         </div>
                                     </section>
                                 </section>
-                                <h3 className="text-36 font-semibold mb-2 text-black leading-58">Bean #2409</h3>
+                                <h3 className="text-36 font-semibold mb-2 text-black leading-58">Billionaire #2529</h3>
                             </section>
                             {/*  */}
 
                             <section className='flex items-center flex-wrap gap-6 ml-4'>
-                                <p className="flex items-center gap-2 font-light text-gray-500 "> Owned by  <span className='text-red-500 transition-all hover:text-red-600 cursor-pointer'>BALEAS</span></p>
+                                <p className="flex items-center gap-2 font-light text-gray-500 "> Owned by  <span className='text-red-500 transition-all hover:text-red-600 cursor-pointer'>TheGreatFiatKings</span></p>
                                 <p className="flex items-center gap-2 font-light cursor-pointer text-gray-500 transition-all hover:text-gray-900"> <AiFillEye className="text-gray-450" size="26" /> 7.7K views</p>
                                 <p className="flex items-center gap-2 font-light cursor-pointer text-gray-500 transition-all hover:text-gray-900"> <AiFillHeart className="text-gray-450" size="24" /> 334 favorites</p>
                             </section>

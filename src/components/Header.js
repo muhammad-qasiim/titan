@@ -11,15 +11,14 @@ const Header = () => {
             <header className="container mx-auto px-24 lg:px-99 py-99 mb-99">
                 <section className="flex flex-col xl:flex-row items-center gap-6">
                     <div className="w-full mb-32 xl:mb-10">
-                        <h3 className="text-50 font-semibold mb-10 text-black leading-58">Discover, collect, and sell extraordinary NFTs</h3>
-                        <p className="mt-4 text-34 text-gray-700 leading-48 pr-0 lg:pr-112">beglobal is the world's first and largest NFT marketplace</p>
-                        <div className="flex items-center gap-4 mt-38">
-                            <Link to="/explore">  <button className="bg-primary text-white px-32 py-10 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px" >Explore</button> </Link>
-                            <Link to="/create">  <button className="border border-red-600 rounded-5 text-primary px-32 py-10 transition-all relative top-0 hover:top-px">
-                                Create
+                        <h3 className="text-50 font-semibold mb-10 text-black leading-58">Titan NFT Marketplace</h3>
+                        <p className="mt-4 text-34 text-gray-700 leading-48 pr-0 lg:pr-112">Titan is the world's first and largest NFT marketplace</p>
+                        <div className="flex items-center gap-2 mt-38">
+                            <Link to="/explore">  <button className="bg-primary text-white px-32 py-10 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px" >PARTICIPATE NOW</button> </Link>
+                            <Link to="/create">  <button className="border-red-600 rounded-5 text-primary px-12 transition-all relative top-0 hover:top-px">
+                            LEARN MORE
                             </button> </Link>
                         </div>
-                        <p className="font-medium flex items-center gap-2 cursor-pointer text-red-600 mt-24 transition-all hover:text-red-700 z-50 relative"> <AiFillPlayCircle size="28" /> Learn more about beglobal</p>
                     </div>
                     <div className="w-full md:w-3/5 xl:w-full">
                         <Link to="/collection">
