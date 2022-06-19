@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
 
     return (
-        <footer className="bg-gray-800">
+        <footer className="bg-gray-800 mt-99">
 
             <section className="container mx-auto px-24 lg:px-99 py-60">
 
@@ -12,8 +12,7 @@ const Footer = () => {
                     <div className="md:mb-0 w-auto md:w-2/6 mb-24">
                         <Link to="/">
                             <h6 className="text-2xl font-semibold text-white mb-8 flex items-center gap-2">
-                                <img className="w-7" src="/assets/beglobal.svg" alt="" />
-                                beglobal</h6>
+                                titan</h6>
                         </Link>
                         <span className="text-gray-400">The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.
                         </span>

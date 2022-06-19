@@ -9,7 +9,7 @@ const SignIn = () => {
     return (
         <>
 
-            <main className='auth-container max-w-md mx-auto'>
+            <main className='auth-container max-w-md mx-auto mt-99'>
                 <h6 className="text-xl font-semibold text-red-500 whitespace-nowrap flex items-center justify-center gap-2 mt-8 mb-34">
                     titan
                 </h6>
