@@ -1,4 +1,4 @@
-// import WalletConnectItem from '../ConnectWalletContainer/WalletConnectItem'
+import WalletConnectItem from '../ConnectWalletContainer/WalletConnectItem'
 import { FaUserCircle } from "react-icons/fa";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
@@ -15,10 +15,12 @@ const Sidebar = ({ toggleSidebar, setToggleSidebar }) => {
                         </div>
                     </section>
                     <section>
-                        <p className="mt-14 -mb-32 text-lg leading-relaxed text-gray-600 text-left">
+                        <p className="mt-14 mb-32 text-lg leading-relaxed text-gray-600 text-left">
                             Connect with one of our available <span className="text-red-600 cursor-pointer transition-all font-semibold"> wallet </span> providers or create a new one.
                         </p>
-                        {/* <WalletConnectItem /> */}
+                        <div>
+                            <WalletConnectItem />
+                        </div>
                     </section>
                 </aside>
             </main>

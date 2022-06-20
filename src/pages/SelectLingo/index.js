@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import Input from '../components/common/Input'
-import Header from '../components/Header'
+import Input from '../../Component/Common/Input'
+import Header from '../../Component/Common/Header'
 
-const SelectLanguage = () => {
+const SelectLingo = () => {
 
     return (
         <>
@@ -32,4 +32,4 @@ const SelectLanguage = () => {
     )
 }
 
-export default SelectLanguage;
+export default SelectLingo;

@@ -32,14 +32,14 @@ const Navbar = () => {
 
                     <div className="flex xl:order-1">
                         <div className="hidden relative mr-3 xl:mr-0 xl:block md:w-424">
-                            <Input type="text" placeholder="Search items, collections, and accounts" startAdorment={<BiSearch className='mt-2' />} />
+                            <Input type="text" placeholder="Search items, collections, and accounts"  />
                         </div>
                         {
                             toggleSearch ? (
                                 <>
                                     <div className="relative ml-18 mr-3 xl:mr-0 xl:hidden flex items-center gap-2">
                                         <MdKeyboardArrowLeft onClick={() => setToggleSearch(false)} className='text-gray-500 text-24 cursor-pointer' />
-                                        <Input type="text" placeholder="Search items, collections, and accounts" startAdorment={<BiSearch className='mt-2' />} />
+                                        <Input type="text" placeholder="Search items, collections, and accounts" startAdorment={<BiSearch />} />
                                     </div>
                                 </>
                             ) : (

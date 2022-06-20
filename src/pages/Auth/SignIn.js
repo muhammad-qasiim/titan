@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Input from '../Component/Common/Input'
+import Input from '../../Component/Common/Input'
 import ForgetPassword from './ForgetPassword';
 
 const SignIn = () => {

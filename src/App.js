@@ -4,11 +4,13 @@ import Layout from "./Component/Common/Layout";
 
 // import Marketplace from "./pages/Marketplace/Marketplace";
 import NFTDetail from "./pages/NFT/NFTDetail";
-import SignIn from "./pages/SignIn.js";
-import SignUp from "./pages/SignUp";
-// import NFT from "./pages/NFT";
+import SignIn from "./pages/Auth/SignIn.js";
+import SignUp from "./pages/Auth/SignUp";
+import ConnectWallet from "./pages/ConnectWallet";
+import CreateProfile from "./pages/CreateProfile";
+import NFT from "./pages/NFT";
 import Profile from "./pages/Profile";
-// import SelectLanguage from "./pages/SelectLanguage";
+import SelectLingo from "./pages/SelectLingo";
 // import { useEffect } from "react";
 import Web3 from "web3";
 import { Web3ReactProvider } from '@web3-react/core'
@@ -27,12 +29,13 @@ function App() {
     <Layout>
       <Switch>
         <Web3ReactProvider getLibrary={getLibrary}>
-          <Route exact path="/" component={NFTDetail} />
-          {/* <Route path="/nft" component={NFT} />  */}
-          {/* <Route path="/select-language" component={SelectLanguage} /> */}
+          <Route exact path="/" component={SelectLingo} />
+          <Route path="/nft" component={NFT} /> 
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/profile" component={Profile} />
+          <Route path="/create" component={ConnectWallet} />
+          <Route path="/create_item" component={CreateProfile} />
         </Web3ReactProvider>
       </Switch>
     </Layout>

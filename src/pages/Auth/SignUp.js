@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Input from '../Component/Common/Input'
+import Input from '../../Component/Common/Input'
 
 const SignUp = () => {
 

@@ -6,7 +6,7 @@ const ConnectWalletContainer = () => {
         <>
             <section className='mt-99 relative'>
                 <img className='absolute -top-10 left-0 hidden lg:block' src="/assets/left-graphic.png" alt="" />
-                <h3 className="text-40 font-semibold text-center mb-22">Connect your wallet.</h3>
+                <h3 className="text-40 font-semibold text-gray-800 text-center mb-22">Connect your wallet.</h3>
                 <img className='absolute -top-10 right-0 hidden lg:block' src="/assets/right-graphic.png" alt="" />
             </section>
 

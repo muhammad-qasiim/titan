@@ -1,5 +1,5 @@
 import ReactModal from "react-modal"
-import Input from '../Component/Common/Input' 
+import Input from '../../Component/Common/Input' 
 
 const ForgetPassword = ({ isOpen, setIsOpen }) => {
 
