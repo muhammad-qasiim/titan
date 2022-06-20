@@ -49,6 +49,10 @@ textarea:focus-visible{
   box-shadow: 0px 7px 73px #0000001A;
 }
 
+.logo{
+  font-family: 'Fascinate', cursive !important;
+} 
+
 .active::after{
   transition: background-color 0.4s ease 0s;
   background-color: rgb(222, 39, 39);
@@ -57,7 +61,7 @@ textarea:focus-visible{
   display: block;
   height: 4px;
   left: 0px;
-  bottom: 0;
+  bottom: -24px;
   position: absolute;
   width: 100%;
   border-top-left-radius: 4px;
@@ -144,7 +148,6 @@ textarea:focus-visible{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('https://picsum.photos/1200/200/?random');
   }
 
   .options-container{
