@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 *,
 *::after,
@@ -136,7 +136,7 @@ textarea:focus-visible{
   background-position: center center;
   opacity: 0.3;
   filter: blur(8px);
-  -webkit-mask: linear-gradient(rgb(255, 255, 255), transparent);
+  /* -webkit-mask: linear-gradient(rgb(255, 255, 255), transparent); */
 }
   
   .showcase-header:hover{
