@@ -1,0 +1,226 @@
+.home-banner {
+  /* background-image: url('headerbanner.png'); */
+  background-size: cover;
+  background-blend-mode: color;
+  background-color: #00000080;
+  background-repeat: no-repeat;
+  margin-bottom: 60px;
+}
+
+.titan-actions button {
+  background: #ff2e2e;
+  border-radius: 4px;
+  height: 37px;
+  width: 175px;
+  cursor: pointer;
+}
+
+.titan-actions button:nth-child(1) {
+  margin-right: 20px;
+}
+
+.banner-details {
+  padding: 100px 0;
+}
+
+.banner-details p {
+  margin-bottom: 30px;
+}
+
+.titan-actions button:nth-child(2) {
+  background: #fff;
+  color: #ff2e2e;
+  border: 2px solid #ff2e2e;
+}
+
+.home-container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Media Section Starts Here */
+.media-section {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.media-section .video {
+  margin-right: 103px;
+}
+
+.media-content {
+  color: black;
+  place-self: center;
+}
+
+/* Media Section Ends Here */
+
+/* Images Section Starts Here */
+.image-section h2 {
+  margin-top: 76px;
+  color: black;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 207px auto;
+}
+
+.right-img {
+  margin-left: auto;
+}
+
+.right-img p,
+.left-img p {
+  text-align: center;
+}
+
+.image-section {
+  color: #000;
+  margin-bottom: 60px;
+}
+
+/* Images Section Ends Here */
+
+/* Media Quesries (max-width: 992px) Starts Here */
+@media (max-width: 992px) {
+  .media-section {
+    grid-template-columns: auto;
+  }
+
+  .media-section .video {
+    margin-right: 0;
+    margin-bottom: 35px;
+  }
+
+  .images {
+    grid-template-columns: auto;
+  }
+
+  .left-img img,
+  .right-img img {
+    margin: auto;
+  }
+
+  .left-img p {
+    margin-bottom: 70px;
+  }
+
+  .right-img {
+    margin-left: unset;
+  }
+}
+
+/* Media Quesries (max-width: 992px) Ends Here */
+
+/* Media Quesries (max-width: 576px) Starts Here */
+@media (max-width: 576px) {
+  .home-container {
+    max-width: 98%;
+    padding: 0 16px;
+  }
+
+  .titan-actions button {
+    width: 140px;
+    font-size: 14px;
+  }
+}
+
+/* Media Quesries (max-width: 576px) Ends Here */
+
+/* Time Counter Section Starts Here */
+.counter-section {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  
+  .counter {
+    color: #ff2e2e;
+  }
+  
+  .counter-content {
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    height: 189px;
+    width: 267px;
+    font-size: 114px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .counter:nth-child(2) {
+    margin: auto;
+    text-align: center;
+  }
+  
+  .counter:nth-child(3) {
+    margin-left: auto;
+  }
+  
+  .counter p {
+    font-weight: 600;
+  }
+  
+  /* Time Counter Section Ends Here */
+  
+  /* Join Now Section Starts Here  */
+  .join {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 60px 0 30px 0;
+    color: #000;
+  }
+  
+  .join-btn button {
+    background-color: #ff5252;
+    height: 43px;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 60px;
+  }
+  
+  .join-btn button:hover {
+    background-color: #ff2e2e;
+  }
+  
+  /* Join Now Section Ends Here  */
+  
+  /* Media Quesries (max-width: 992px) Starts Here */
+  @media (max-width: 992px) {
+    .counter-content {
+      height: 140px;
+      width: 180px;
+      font-size: 70px;
+    }
+  }
+  
+  /* Media Quesries (max-width: 992px) Ends Here */
+  
+  /* Media Quesries (max-width: 640px) Starts Here */
+  @media (max-width: 640px) {
+    .counter-content {
+      height: 80px;
+      width: 80px;
+      font-size: 36px;
+    }
+  
+    .join {
+      grid-template-columns: auto;
+    }
+  
+    .join-img {
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* Media Quesries (max-width: 640px) Ends Here */

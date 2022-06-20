@@ -5,12 +5,12 @@ import { BsThreeDots } from "react-icons/bs";
 import { MdModeEditOutline, MdSell, MdSend } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
-const CollectionItem = () => {
+const CollectionItem = ({slider}) => {
 
     const [toggle, setToggle] = useState(false)
 
     return (
-        <div className="my-18 px-14 w-full md:w-1/2 lg:my-12 lg:px-14 lg:w-1/3 cursor-pointer">
+        <div className={`my-18 px-14  lg:my-12 lg:px-14 cursor-pointer ${slider ? 'w-full' : 'w-full md:w-1/2 lg:w-1/3'}`}>
             <article className="overflow-hidden rounded-lg shadow-lg custom-shadow">
                     <section className="relative">
                         <img alt="Placeholder" className="block h-auto w-full" src="assets/image/nft.jpg" />

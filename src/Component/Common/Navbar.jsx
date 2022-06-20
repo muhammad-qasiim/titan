@@ -16,14 +16,14 @@ const Navbar = () => {
     const [toggleSidebarNav, setToggleSidebarNav] = useState(false);
 
     const [activeLink, setActiveLink] = useState('Trending');
-    const Navigation = [{ placeholder: 'Events', path: '/events' }, { placeholder: 'Profile', path: '/profile' }, { placeholder: 'Create', path: '/create' }]
+    const Navigation = [{ placeholder: 'Home', path: '/home' }, { placeholder: 'Events', path: '/events' }, { placeholder: 'Airdrop Challenge', path: '/challenge' }, { placeholder: 'Profile', path: '/profile' },]
 
     return (
         <>
 
             <nav className="sticky h-71 top-0 bg-white shadow-xl" style={{ zIndex: '999' }}>
                 <div className="flex h-71 justify-between items-center mx-auto px-24 lg:px-99">
-                    <Link to="/">
+                    <Link to="/home">
                         <span className="self-center logo text-xl text-red-500 font-semibold whitespace-nowrap flex items-center gap-2">
                             <img className="w-36" src="assets/image/beglobal.svg" alt="" />
                             Titan</span>

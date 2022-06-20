@@ -6,7 +6,7 @@ import { BsDiscord, BsSignal  } from "react-icons/bs";
 
 const SidebarNav = ({ toggleSidebarNav, setToggleSidebarNav }) => {
     const [toggleSidebar, setToggleSidebar] = useState(false);
-    const Navigation = [{ placeholder: 'Events', path: '/events' }, { placeholder: 'Profile', path: '/profile' }, { placeholder: 'Create', path: '/create' }]
+    const Navigation = [{ placeholder: 'Events', path: '/events' }, { placeholder: 'Profile', path: '/profile' },]
 
     return (
         <>

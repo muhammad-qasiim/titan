@@ -20,15 +20,15 @@ const NFTDetail = () => {
                 </div>
 
                 <div className='flex items-center gap-4 justify-between py-18 border-t border-b px-24 cursor-pointer'>
-                    <span className='text-16 font-bold flex items-center gap-3 text-gray-900'> <FaAlignLeft className='text-gray-800' size="18" />About BEANZ Official </span>
+                    <span className='text-16 font-bold flex items-center gap-3 text-gray-900'> <FaAlignLeft className='text-gray-800' size="18" />About TITANS Official </span>
                     <MdKeyboardArrowUp className='text-gray-600 cursor-pointer' size="20" />
                 </div>
 
                 <div className='px-24 bg-gray-50 pt-14 pb-18'>
                     <span className="text-gray-700 text-14">
-                        <img alt="Placeholder" className="w-99 h-99 rounded-8 mr-14 mb-0 float-left" src="https://lh3.googleusercontent.com/LwWCE4G49qFjE-HBdMNtMQVDYK6MRbv3rGDJt59o1YAj2DXfxJyCu1KIsK76D_nvcnH9ISAw3OAP2iPT571UVs4CERn_LaPTn1D0QQ=w600" />
+                        <img alt="Placeholder" className="w-99 h-99 rounded-8 mr-14 mb-0 float-left" src="assets/image/nft.jpg" />
 
-                        BEANZ are a small species that sprouts from the dirt in the garden. They're earnestly driven by the desire to help. However, certain BEANZ feel a calling to pave their own path...
+                        TITANS are a small species that sprouts from the dirt in the garden. They're earnestly driven by the desire to help. However, certain TITANS feel a calling to pave their own path...
                     </span>
                     <section className="flex items-center mt-18 ">
                         <div className="grid place-items-center bg-white custom-shadow text-gray-500 text-center px-20 h-40 w-56 cursor-pointer rounded-tl-8 rounded-bl-8 border">

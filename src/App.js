@@ -6,11 +6,12 @@ import Layout from "./Component/Common/Layout";
 import SignIn from "./pages/Auth/SignIn.js";
 import SignUp from "./pages/Auth/SignUp";
 import ConnectWallet from "./pages/ConnectWallet";
-import CreateProfile from "./pages/CreateProfile";
 import NFT from "./pages/NFT";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import Challenge from "./pages/Challenge";
 import SelectLingo from "./pages/SelectLingo";
+import Events from "./pages/Events";
 // import { useEffect } from "react";
 import Web3 from "web3";
 import { Web3ReactProvider } from '@web3-react/core'
@@ -33,10 +34,11 @@ function App() {
           <Route path="/nft" component={NFT} /> 
           <Route path="/home" component={Home} /> 
           <Route path="/signin" component={SignIn} />
+          <Route path="/challenge" component={Challenge} />
           <Route path="/signup" component={SignUp} />
           <Route path="/profile" component={Profile} />
+          <Route path="/events" component={Events} />
           <Route path="/create" component={ConnectWallet} />
-          <Route path="/create_item" component={CreateProfile} />
         </Web3ReactProvider>
       </Switch>
     </Layout>

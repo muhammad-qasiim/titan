@@ -22,7 +22,7 @@ const NFT = () => {
                             {/* mobile only */}
                             <section className='block xl:hidden'>
                                 <section className='flex items-center gap-4 justify-between'>
-                                    <span className='text-red-500 text-18 flex items-center gap-3'>Party Ape Billionaire Club <GoVerified className="text-blue-500 text-16" /></span>
+                                    <span className='text-red-500 text-18 flex items-center gap-3'>Titans Club <GoVerified className="text-blue-500 text-16" /></span>
                                     <section className="flex justify-center items-center my-8">
                                         <div className="grid place-items-center custom-shadow text-gray-500 text-center px-20 h-40 w-56 cursor-pointer rounded-tl-8 rounded-bl-8 border">
                                             <IoMdRefresh size="18" />
@@ -35,7 +35,7 @@ const NFT = () => {
                                         </div>
                                     </section>
                                 </section>
-                                <h3 className="text-36 font-semibold mb-2 text-black leading-58">Billionaire #2529</h3>
+                                <h3 className="text-36 font-semibold mb-2 text-black leading-58">Titans #2529</h3>
                             </section>
                             {/*  */}
 
@@ -46,7 +46,7 @@ const NFT = () => {
                                         <span className="text-14 text-gray-600 flex items-center gap-2"> <AiOutlineHeart className="transition-all cursor-pointer hover:text-red-600" size="22" /> 14</span>
                                     </div>
                                     <section className="relative">
-                                        <img alt="Placeholder" className="block h-auto w-full" src="https://lh3.googleusercontent.com/LwWCE4G49qFjE-HBdMNtMQVDYK6MRbv3rGDJt59o1YAj2DXfxJyCu1KIsK76D_nvcnH9ISAw3OAP2iPT571UVs4CERn_LaPTn1D0QQ=w600" />
+                                        <img alt="Placeholder" className="block h-auto w-full" src="assets/image/nft.jpg" />
                                     </section>
                                 </article>
                             </div>
@@ -57,7 +57,7 @@ const NFT = () => {
                             {/* desktop only */}
                             <section className='hidden xl:block'>
                                 <section className='md:flex items-center gap-4 justify-between'>
-                                    <span className='text-red-500 text-18 flex items-center gap-3'>Party Ape Billionaire Club <GoVerified className="text-blue-500 text-16" /></span>
+                                    <span className='text-red-500 text-18 flex items-center gap-3'>Titans Club <GoVerified className="text-blue-500 text-16" /></span>
                                     <section className="flex justify-center items-center my-8">
                                         <div className="grid place-items-center custom-shadow text-gray-500 text-center px-20 h-40 w-56 cursor-pointer rounded-tl-8 rounded-bl-8 border">
                                             <IoMdRefresh size="18" />
@@ -70,7 +70,7 @@ const NFT = () => {
                                         </div>
                                     </section>
                                 </section>
-                                <h3 className="text-36 font-semibold mb-2 text-black leading-58">Billionaire #2529</h3>
+                                <h3 className="text-36 font-semibold mb-2 text-black leading-58">Titans #2529</h3>
                             </section>
                             {/*  */}
 

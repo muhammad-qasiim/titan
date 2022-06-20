@@ -26,12 +26,12 @@ function Create() {
             </header>
 
             <section className="container mx-auto px-24 lg:px-99 my-72 text-center">
-                <h3 className="text-28 font-semibold text-gray-800 text-center mb-18 flex items-center gap-2 justify-center">Party Ape Billionaire Club <GoVerified className="text-blue-500 text-22" /> </h3>
+                <h3 className="text-28 font-semibold text-gray-800 text-center mb-18 flex items-center gap-2 justify-center">Titans Club <GoVerified className="text-blue-500 text-22" /> </h3>
                 <h5 className="flex items-center gap-2 text-gray-700 justify-center mb-14">Wallet Address: <span className="text-red-500 cursor-pointer hover:underline transition-all hover:text-red-700"> Connect Wallet to profile</span> </h5>
-                <h5 className="flex items-center gap-2 text-gray-700 justify-center mb-14">Created by <span className="text-red-500 cursor-pointer transition-all hover:text-red-700"> Billionaireclub_LLC</span> <GoVerified className="text-blue-500 text-14" /> </h5>
+                {/* <h5 className="flex items-center gap-2 text-gray-700 justify-center mb-14">Created by <span className="text-red-500 cursor-pointer transition-all hover:text-red-700"> Billionaireclub_LLC</span> <GoVerified className="text-blue-500 text-14" /> </h5> */}
 
-                <p className="text-18 w-full md:w-2/4 mx-auto font-light" style={{ color: '#707a83' }}>
-                    The BILLIONAIRE CLUB is a private collection of 10,000 billionaire apes NFTs - unique digital collectibles. Earlier this year, a mysterious force coming from another galaxy summoned the most influential people on planet Earth to a secret party. Acquiring one of them will give you access to an ever-growing community of investors and entrepreneurs.                    </p>
+                {/* <p className="text-18 w-full md:w-2/4 mx-auto font-light" style={{ color: '#707a83' }}>
+                    The BILLIONAIRE CLUB is a private collection of 10,000 billionaire apes NFTs - unique digital collectibles. Earlier this year, a mysterious force coming from another galaxy summoned the most influential people on planet Earth to a secret party. Acquiring one of them will give you access to an ever-growing community of investors and entrepreneurs.                    </p> */}
             </section>
 
             <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 mb-32 mx-8 overflow-x-scroll">
