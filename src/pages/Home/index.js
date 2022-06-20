@@ -1,15 +1,9 @@
 
-import { useState } from 'react'
 import ReactPlayer from 'react-player'
-import { GoVerified } from "react-icons/go";
-import { BsCollection } from "react-icons/bs";
-import { AiOutlineTag, AiOutlineHeart, AiOutlineFormatPainter, AiOutlineUnorderedList } from "react-icons/ai";
 import Header from '../../Component/Common/Header';
 import Slider from '../../Component/Common/Slider'
 
 function Create() {
-    const [activeLink, setActiveLink] = useState('Collected')
-    const Collections = ["Collected", "Favourited", "Offers Made", "Offers Received", "Active Listings",]
 
     return (
         <>
