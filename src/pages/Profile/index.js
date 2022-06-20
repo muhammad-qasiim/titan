@@ -2,8 +2,7 @@
 import { useState } from 'react'
 import { GoVerified } from "react-icons/go";
 import { BsCollection } from "react-icons/bs";
-import { GiBackwardTime } from "react-icons/gi";
-import { AiOutlineTag, AiOutlineEyeInvisible, AiOutlineHeart, AiOutlineFormatPainter, AiOutlineUnorderedList } from "react-icons/ai";
+import { AiOutlineTag, AiOutlineHeart, AiOutlineFormatPainter, AiOutlineUnorderedList } from "react-icons/ai";
 
 import CollectionItem from '../../Component/Common/CollectionItems'
 

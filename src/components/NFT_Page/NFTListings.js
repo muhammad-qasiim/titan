@@ -34,7 +34,7 @@ const NFTListings = ({title}) => {
                             </thead>
                             <tbody>
                                 <tr className="bg-gray-50 pb-22 h-58 text-gray-800 text-14">
-                                    <td scope="row" className="pl-24 h-58 whitespace-nowrap flex gap-2 items-center">
+                                    <td className="pl-24 h-58 whitespace-nowrap flex gap-2 items-center">
                                         <img className="w-10" src="https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg" alt="" />
                                         <span className="font-bold"> 0.00001 </span> WETH
                                     </td>

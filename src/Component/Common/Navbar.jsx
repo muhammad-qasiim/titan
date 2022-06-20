@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Input from './Input';
-import { AiOutlineHeart, AiOutlineUser, AiOutlineEye, AiOutlineSetting, AiOutlineMenu } from "react-icons/ai";
-import { BsGrid } from "react-icons/bs";
+import { AiOutlineMenu } from "react-icons/ai";
 import { VscClose } from "react-icons/vsc";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import Sidebar from './Sidebar';

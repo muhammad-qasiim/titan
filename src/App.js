@@ -1,9 +1,8 @@
 
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Layout from "./Component/Common/Layout";
 
 // import Marketplace from "./pages/Marketplace/Marketplace";
-import NFTDetail from "./pages/NFT/NFTDetail";
 import SignIn from "./pages/Auth/SignIn.js";
 import SignUp from "./pages/Auth/SignUp";
 import ConnectWallet from "./pages/ConnectWallet";
@@ -20,7 +19,7 @@ function getLibrary(provider) {
 }
 
 function App() {
-  const history = useHistory();
+  // const history = useHistory();
   // useEffect(() => {
   //   if (history.location.pathname !== '/') {
   //     history.push('/')

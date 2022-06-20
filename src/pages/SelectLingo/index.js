@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Input from '../../Component/Common/Input'
 import Header from '../../Component/Common/Header'
 
 const SelectLingo = () => {
@@ -7,8 +6,6 @@ const SelectLingo = () => {
     return (
         <>
             <Header />
-
-
             <main className='bg-gray-100'>
                 <section className="container mx-auto px-24 lg:px-99 py-99">
                     <h3 className="text-28 px-14 font-medium text-gray-800 mb-62">Select your language</h3>

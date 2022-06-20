@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { BsInfoCircle } from "react-icons/bs";
-import { AiFillPlayCircle } from "react-icons/ai";
 
 const Header = () => {
 

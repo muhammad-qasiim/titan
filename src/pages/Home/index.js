@@ -2,10 +2,8 @@
 import { useState } from 'react'
 import { GoVerified } from "react-icons/go";
 import { BsCollection } from "react-icons/bs";
-import { GiBackwardTime } from "react-icons/gi";
-import { AiOutlineTag, AiOutlineEyeInvisible, AiOutlineHeart, AiOutlineFormatPainter, AiOutlineUnorderedList } from "react-icons/ai";
+import { AiOutlineTag, AiOutlineHeart, AiOutlineFormatPainter, AiOutlineUnorderedList } from "react-icons/ai";
 import Header from '../../Component/Common/Header';
-import Slider from '../../Component/Common/Slider';
 import CollectionItem from '../../Component/Common/CollectionItems'
 
 function Create() {
@@ -16,7 +14,6 @@ function Create() {
         <>
             <Header />
 
-            <Slider />
 
             <section className="container mx-auto px-24 lg:px-99 my-72 text-center">
                 <h3 className="text-28 font-semibold text-gray-800 text-center mb-18 flex items-center gap-2 justify-center">Party Ape Billionaire Club <GoVerified className="text-blue-500 text-22" /> </h3>
