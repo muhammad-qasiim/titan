@@ -16,12 +16,12 @@ const SelectLingo = () => {
                     <section className="flex flex-col xl:flex-row gap-6 overflow-hidden pb-62">
                         <div className="w-full md:w-3/5 xl:w-full">
                                 <article className="showcase-header cursor-pointer h-full overflow-hidden rounded-lg">
-                                    <img alt="Placeholder" className="block object-cover w-full h-full" src="assets/image/flags/britian.png" />
+                                   <Link to="/home"> <img alt="Placeholder" className="block object-cover w-full h-full" src="assets/image/flags/britian.png" /> </Link>
                                 </article>
                         </div>
                         <div className="w-full md:w-3/5 xl:w-full">
                                 <article className="showcase-header cursor-pointer h-full overflow-hidden rounded-lg">
-                                        <img alt="Placeholder" className="block object-cover w-full h-full" src="assets/image/flags/thailand.png" />
+                                <Link to="/home"> <img alt="Placeholder" className="block object-cover w-full h-full" src="assets/image/flags/thailand.png" /> </Link>
                                 </article>
                         </div>
                     </section>

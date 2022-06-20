@@ -5,6 +5,7 @@ import { AiFillPlayCircle } from "react-icons/ai";
 const Header = () => {
 
     return (
+        <>
         <section className="relative">
             <div className="showcase w-full absolute inset-0">
             </div>
@@ -46,6 +47,13 @@ const Header = () => {
                 </section>
             </header>
         </section>
+
+
+        <section>
+
+        </section>
+        </>
+
     )
 }
 

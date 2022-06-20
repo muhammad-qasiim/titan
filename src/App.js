@@ -9,6 +9,7 @@ import SignUp from "./pages/Auth/SignUp";
 import ConnectWallet from "./pages/ConnectWallet";
 import CreateProfile from "./pages/CreateProfile";
 import NFT from "./pages/NFT";
+import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import SelectLingo from "./pages/SelectLingo";
 // import { useEffect } from "react";
@@ -31,6 +32,7 @@ function App() {
         <Web3ReactProvider getLibrary={getLibrary}>
           <Route exact path="/" component={SelectLingo} />
           <Route path="/nft" component={NFT} /> 
+          <Route path="/home" component={Home} /> 
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/profile" component={Profile} />

@@ -1,5 +1,5 @@
 {
-  "name": "meta",
+  "name": "titan",
   "version": "0.1.0",
   "private": true,
   "homepage": "/",
@@ -24,6 +24,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "stream-browserify": "^3.0.0",
+    "swiper": "^8.2.4",
     "url": "^0.11.0",
     "walletconnect": "^1.7.1",
     "web-vitals": "^2.1.4",
