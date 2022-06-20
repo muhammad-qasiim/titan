@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import ReactPlayer from 'react-player'
 import { GoVerified } from "react-icons/go";
 import { BsCollection } from "react-icons/bs";
 import { AiOutlineTag, AiOutlineHeart, AiOutlineFormatPainter, AiOutlineUnorderedList } from "react-icons/ai";
@@ -14,6 +15,18 @@ function Create() {
         <>
             <Header />
 
+            <section className="container mx-auto px-30 md:px-62 py-52 mb-54">
+                <main className='flex flex-col lg:flex-row gap-5 lg:gap-9 justify-between'>
+                    <div className="w-full">
+                        <ReactPlayer url='https://www.youtube.com/watch?v=Wk7QpuWVpNQ' />
+                    </div>
+                    <div className="w-full">
+                        <h3 className="font-semibold text-24 lg:text-28 mb-10 text-black leading-58">Discover, collect, and sell extraordinary NFTs</h3>
+                        <p className="mt-4 text-16 text-gray-700">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, cumque cum. Debitis nihil unde, molestiae fugiat sapiente corrupti officia itaque.                        </p>
+                    </div>
+                </main>
+            </section>
 
             <section className="container mx-auto px-24 lg:px-99 my-72 text-center">
                 <h3 className="text-28 font-semibold text-gray-800 text-center mb-18 flex items-center gap-2 justify-center">Party Ape Billionaire Club <GoVerified className="text-blue-500 text-22" /> </h3>
