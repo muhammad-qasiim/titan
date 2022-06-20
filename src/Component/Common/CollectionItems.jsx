@@ -12,11 +12,9 @@ const CollectionItem = () => {
     return (
         <div className="my-18 px-14 w-full md:w-1/2 lg:my-12 lg:px-14 lg:w-1/3 cursor-pointer">
             <article className="overflow-hidden rounded-lg shadow-lg custom-shadow">
-                <Link to="/single_nft">
                     <section className="relative">
                         <img alt="Placeholder" className="block h-auto w-full" src="assets/image/nft.jpg" />
                     </section>
-                </Link>
 
                 <footer className='text-center w-full py-14 px-12'>
                     <Link className="w-full" to="/single_nft">

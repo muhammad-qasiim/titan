@@ -8,7 +8,7 @@ const Header = () => {
         <section className="relative">
             <div className="showcase w-full absolute inset-0">
             </div>
-            <header className="container mx-auto px-24 lg:px-99 py-99 mb-99">
+            <header className="container mx-auto px-24 lg:px-99 py-99">
                 <section className="flex flex-col xl:flex-row items-center gap-6">
                     <div className="w-full mb-32 xl:mb-10">
                         <h3 className="text-50 font-semibold mb-10 text-black leading-58">Discover, collect, and sell extraordinary NFTs</h3>
