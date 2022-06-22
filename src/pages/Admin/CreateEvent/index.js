@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { BsFileImage, BsAsterisk } from "react-icons/bs";
 import Input from '../../../Component/Common/Input';
 import Navbar from '../../../Component/Admin/Navbar';
@@ -49,6 +50,36 @@ const CreateEvent = () => {
 
                                 <BsFileImage className="text-56" style={{ color: 'rgb(179, 179, 179)' }} />
                             </section>
+                        </div>
+
+                        <div className='flex items-center gap-3 mb-18'>
+                            <Input
+                                className="mb-22"
+                                label="Event start date"
+                                type='date'
+                                name="name"
+                            />
+                            <Input
+                                className="mb-22"
+                                type='time'
+                                label='Event start time'
+                                name="name"
+                            />
+                        </div>
+
+                        <div className='flex items-center gap-3 mb-18'>
+                            <Input
+                                className="mb-22"
+                                label="Event end date"
+                                type='date'
+                                name="name"
+                            />
+                            <Input
+                                className="mb-22"
+                                type='time'
+                                label='Event end time'
+                                name="name"
+                            />
                         </div>
 
                         <hr />

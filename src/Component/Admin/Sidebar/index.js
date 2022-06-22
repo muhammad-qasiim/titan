@@ -15,7 +15,7 @@ const Sidebar = () => {
                     Navigation?.map(item => (
                         <li className='mb-12'>
                             <Link to={item?.path}>
-                                <span className='relative text-xl border-b-2 border-transparent cursor-pointer transition-all text-gray-500 hover:text-gray-800'>
+                                <span className='relative text-xl border-b-2 border-transparent cursor-pointer transition-all text-gray-500 hover:text-red-600'>
                                     {item?.placeholder}
                                 </span>
                             </Link>

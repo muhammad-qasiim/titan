@@ -51,7 +51,35 @@ const CreateMission = () => {
                                 <BsFileImage className="text-56" style={{ color: 'rgb(179, 179, 179)' }} />
                             </section>
                         </div>
+                        <div className='flex items-center gap-3 mb-18'>
+                            <Input
+                                className="mb-22"
+                                label="Mission start date"
+                                type='date'
+                                name="name"
+                            />
+                            <Input
+                                className="mb-22"
+                                type='time'
+                                label='Mission start time'
+                                name="name"
+                            />
+                        </div>
 
+                        <div className='flex items-center gap-3 mb-18'>
+                            <Input
+                                className="mb-22"
+                                label="Mission end date"
+                                type='date'
+                                name="name"
+                            />
+                            <Input
+                                className="mb-22"
+                                type='time'
+                                label='Mission end time'
+                                name="name"
+                            />
+                        </div>
                         <hr />
                         <button className="bg-red-500 text-white px-32 py-10 mt-52 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px"> Add </button>
                     </section>

@@ -22,7 +22,9 @@ import AdminLayout from "./Component/Common/AdminLayout";
 import { useHistory } from "react-router-dom";
 import Dashboard from "./pages/Admin/Dashboard/Dashboard";
 import CreateEvent from "./pages/Admin/CreateEvent";
+import EventList from "./pages/Admin/EventList";
 import CreateMission from "./pages/Admin/CreateMission";
+import MissionList from "./pages/Admin/MissionList";
 
 function getLibrary(provider) {
   return new Web3(provider)
@@ -46,7 +48,9 @@ function App() {
               <Route path="/admin/signin" component={AdminSignIn} />
               <Route path="/admin/dashboard" component={Dashboard} />
               <Route path="/admin/create-event" component={CreateEvent} />
+              <Route path="/admin/events" component={EventList} />
               <Route path="/admin/create-mission" component={CreateMission} />
+              <Route path="/admin/missions" component={MissionList} />
             </AdminLayout>
             :
             <Layout>
