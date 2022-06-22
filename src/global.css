@@ -15,7 +15,7 @@ body{
   background-color: #F8F8F8;
 }
 
-input, textarea{
+input, textarea, select{
   border-radius: 6px;
   border: 1px solid rgb(229, 232, 235);
 }
@@ -26,6 +26,8 @@ input::placeholder, textarea::placeholder{
 
 input:focus, 
 input:focus-visible,
+select:focus, 
+select:focus-visible,
 textarea:focus, 
 textarea:focus-visible{
   outline: none;

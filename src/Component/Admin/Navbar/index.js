@@ -6,7 +6,7 @@ const Navbar = () => {
         <>
             <nav className="sticky top-0 bg-white shadow-xl z-50 py-18">
                     <section className='w-full px-24 flex items-center justify-between'>
-                        <Link to="/admin">
+                        <Link to="/admin/dashboard">
                             <span className="logo text-xl text-red-500 font-semibold whitespace-nowrap flex items-center gap-2">
                                 <img className="w-36" src="/assets/image/beglobal.svg" alt="" />
                                 Titan</span>

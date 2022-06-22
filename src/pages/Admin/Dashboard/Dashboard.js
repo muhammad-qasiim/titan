@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from '../../../Component/Admin/Navbar';
 import Sidebar from '../../../Component/Admin/Sidebar';
-import Footer from '../../../Component/Admin/Footer';
 
 const Dashboard = () => {
     return (
@@ -16,7 +15,7 @@ const Dashboard = () => {
                 </section>
 
                 <section className="flex flex-col flex-1 items-center justify-center">
-                    <h1 className="font-bold text-56">Dashboard</h1>
+                    <h1 className="font-bold text-56 my-99">Dashboard</h1>
                 </section>
 
             </main>

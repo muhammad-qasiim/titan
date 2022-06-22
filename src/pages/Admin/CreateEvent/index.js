@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BsFileImage, BsAsterisk } from "react-icons/bs";
 import Input from '../../../Component/Common/Input';
 import Navbar from '../../../Component/Admin/Navbar';
 import Sidebar from '../../../Component/Admin/Sidebar';
-import Footer from '../../../Component/Admin/Footer';
 
 const CreateEvent = () => {
 
@@ -19,7 +18,7 @@ const CreateEvent = () => {
 
                 <section className="flex flex-col flex-1 items-center justify-center">
                     <section className="w-full createItemContainer container mx-auto px-24 lg:px-99 mt-28 mb-100">
-                        <h3 className="text-40 font-semibold text-left my-99">Add New Event</h3>
+                        <h3 className="text-40 font-semibold text-left my-42">Add New Event</h3>
                         <p className="caption-text mb-16 flex items-start gap-1"><BsAsterisk className="text-8 text-red-600 relative top-1" /> Required fields</p>
                         <Input
                             className="mb-22"
