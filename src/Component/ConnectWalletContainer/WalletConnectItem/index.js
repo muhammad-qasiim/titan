@@ -11,7 +11,6 @@ const WalletConnectItem = () => {
                 <ul className="rounded-8 card-shadow bg-gray-50 w-full mx-auto my-60 border">
                     {
                         Collections?.map(collection => (
-                            <Link className='w-full' to="/create_item">
                                 <li className="wallet-item bg-gray-50 flex items-center justify-between px-26 py-16 border-b cursor-pointer">
                                     <div className={`flex justify-between text-gray-700 items-center gap-4 font-normal text-16 cursor-pointer transition-all`}>
                                         {collection === 'MetaMask' && (
@@ -26,8 +25,6 @@ const WalletConnectItem = () => {
                                         <div className="bg-red-500 text-white px-16 py-3 rounded-20">Popular</div>
                                     )}
                                 </li>
-                            </Link>
-
                         ))
                     }
                     <li>
