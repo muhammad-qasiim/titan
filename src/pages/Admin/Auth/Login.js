@@ -32,10 +32,10 @@ const AdminSignIn = () => {
 
     return (
         <>
-            <section className='my-99'>
-                <main className='auth-container max-w-md mx-auto'>
+            <main className='grid place-content-center' style={{ height: '100vh' }}>
+                <main className='auth-container w-full sm:w-384 mx-auto'>
                     <span className="self-center logo text-xl text-red-500 mb-26 w-full font-semibold whitespace-nowrap flex items-center justify-center gap-2">
-                        <img className="w-36" src="assets/image/beglobal.svg" alt="" />
+                        <img className="w-36" src="/assets/image/beglobal.svg" alt="" />
                         Admin Titan
                     </span>
                     <div className='w-full'>
@@ -60,7 +60,8 @@ const AdminSignIn = () => {
                     </div>
                     <button type='button' onClick={() => _login()} className="bg-red-500 text-white w-full mb-18 px-32 h-38 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px" >Sign In</button>
                 </main>
-            </section>
+            </main>
+
         </>
     )
 }

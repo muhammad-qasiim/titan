@@ -176,8 +176,8 @@ textarea:focus-visible{
     outline: 3px dashed rgb(204, 204, 204);
     outline-offset: 6px;
     border-radius: 10px;
-    width: 280px;
-    height: 220px;
+    width: 100%;
+    height: 160px;
     transition: 0.2s ease-in;
 
     display: grid;
