@@ -161,7 +161,7 @@ const CreateEvent = () => {
                             />
                         </div>
                         <hr />
-                        <button onClick={() => _createEvent()} className="bg-red-500 text-white px-32 py-10 mt-52 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px"> Add </button>
+                        <button onClick={() => _createEvent()} className="bg-red-500 text-white px-32 py-10 mt-52 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px"> Create Event </button>
                     </section>
                 </section>
             </main>
