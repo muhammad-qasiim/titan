@@ -123,7 +123,7 @@ const CreateEvent = () => {
                         <div className='flex items-center gap-3 mb-18'>
                             <Input
                                 className="mb-22"
-                                label="Event start date"
+                                label="Mission start date"
                                 type='date'
                                 name="startDate"
                                 value={startDate}
@@ -133,22 +133,23 @@ const CreateEvent = () => {
                             <Input
                                 className="mb-22"
                                 type='time'
-                                label='Event start time'
-                                name="endDate"
-                                value={endDate}
+                                label='Mission start time'
+                                name="startTime"
+                                value={startTime}
                                 handleChange={handleChange}
-                                errorMessage={errors?.endDate}
+                                errorMessage={errors?.startTime}
                             />
                         </div>
+
                         <div className='flex items-center gap-3 mb-18'>
                             <Input
                                 className="mb-22"
                                 label="Event end date"
                                 type='date'
-                                name="startTime"
-                                value={startTime}
+                                name="endDate"
+                                value={endDate}
                                 handleChange={handleChange}
-                                errorMessage={errors?.startTime}
+                                errorMessage={errors?.endDate}
                             />
                             <Input
                                 className="mb-22"
