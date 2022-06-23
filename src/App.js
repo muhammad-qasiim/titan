@@ -1,4 +1,3 @@
-
 import { Route, Switch } from "react-router-dom";
 import Layout from "./Component/Common/Layout";
 import store from './store';
@@ -33,12 +32,15 @@ function getLibrary(provider) {
 function App() {
   const history = useHistory();
   const url = history?.location?.pathname?.split('/')?.includes('admin');
+  const adminToken = localStorage.getItem('token');
 
   useEffect(() => {
-    // if (url) {
-    //   history.push('/admin/signin')
-    // }
-  }, [history, url])
+    if (url && adminToken) {
+      history.push('/admin/dashboard');
+    } else if (url) {
+      history.push('/admin/signin');
+    }
+  }, [history, url, adminToken])
   return (
     <Provider store={store}>
       <Switch>
