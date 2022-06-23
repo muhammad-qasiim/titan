@@ -5,6 +5,10 @@
   "homepage": "/",
   "dependencies": {
     "@craco/craco": "^6.4.3",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.8.5",
+    "@mui/styled-engine-sc": "^5.8.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -29,6 +33,7 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "stream-browserify": "^3.0.0",
+    "styled-components": "^5.3.5",
     "swiper": "^6.8.4",
     "url": "^0.11.0",
     "walletconnect": "^1.7.1",
