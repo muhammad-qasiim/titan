@@ -255,8 +255,6 @@ export default function EnhancedTable({ rows, loader }) {
                                             <TableCell padding="2px">{moment.utc(row.endDate).format('MM/DD/YYYY HH:mm:ss')}</TableCell>
                                             {searchURL?.includes('events') &&
                                                 <TableCell padding="2px">
-                                                    {console.log(new Date(moment.utc(row.startDate).format('YYYY-MM-DD')).getTime() >= new Date().getTime())}
-                                                    {/* <Link to="/admin/create-mission"> */}
                                                     {((new Date(moment.utc(row.startDate).format('YYYY-MM-DD')).getTime() >= new Date().getTime())
                                                         || (new Date(moment.utc(row.startDate).format('MM/DD/YYYY')).setHours(0, 0, 0, 0) == (new Date().setHours(0, 0, 0, 0)))) &&
                                                         <button
@@ -270,7 +268,6 @@ export default function EnhancedTable({ rows, loader }) {
                                                             Manage
                                                         </button>
                                                     }
-                                                    {/* </Link> */}
                                                 </TableCell>
                                             }
                                         </TableRow>
