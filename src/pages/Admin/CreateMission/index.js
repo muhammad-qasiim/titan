@@ -31,7 +31,7 @@ const CreateMission = () => {
     }
 
     const validate = () => {
-        const imageURL = URL.createObjectURL(imageUrl && imageUrl)
+        const imageURL = imageUrl && URL.createObjectURL(imageUrl && imageUrl)
         const _errors = {};
         if (isEmpty(name)) {
             _errors.name = 'Please enter name.';

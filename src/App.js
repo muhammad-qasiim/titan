@@ -65,7 +65,7 @@ function App() {
   }, [urlCheck, userInfo])
 
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
       <Switch>
         <Web3ReactProvider getLibrary={getLibrary}>
           {url ?
@@ -92,7 +92,7 @@ function App() {
           }
         </Web3ReactProvider>
       </Switch>
-    </Provider>
+    // </Provider>
   );
 }
 
