@@ -1,9 +1,33 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../../Component/Admin/Navbar';
 import Sidebar from '../../../Component/Admin/Sidebar';
 import SimpleTable from '../../../components/common/Table/SimpleTable';
+import { API_URL_ADMIN } from '../../../utils/contant';
 
 const EventList = () => {
+    const [loader, setLoader] = useState(true);
+    const adminToken = localStorage.getItem('token');
+    const [res, setRes] = useState([]);
+
+    useEffect(() => {
+        _getList()
+    }, [])
+
+    const _getList = () => {
+        const headers = {
+            Authorization: `Bearer ${adminToken}`,
+        };
+        axios.get(API_URL_ADMIN + 'admin/events', { headers: headers })
+            .then(res => {
+                setLoader(false);
+                setRes(res?.data)
+            })
+            .catch(err => {
+                setLoader(false);
+            })
+    }
     return (
         <>
             <Navbar />
@@ -19,7 +43,7 @@ const EventList = () => {
                         </div>
                         <hr />
                     </section>
-                    <SimpleTable />
+                    <SimpleTable rows={res} loader={loader}/>
                 </section>
             </main>
         </>

@@ -41,7 +41,7 @@ function App() {
       history.push('/admin/signin');
     }
   }, [history, url, adminToken])
-  
+
   return (
     <Provider store={store}>
       <Switch>

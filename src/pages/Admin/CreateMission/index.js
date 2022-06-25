@@ -4,11 +4,18 @@ import Navbar from '../../../Component/Admin/Navbar';
 import Sidebar from '../../../Component/Admin/Sidebar';
 import { useState } from "react";
 import isEmpty from "../../../utils/isEmpty";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { API_URL_ADMIN } from "../../../utils/contant";
 
 const CreateMission = () => {
     const [userData, setUserData] = useState({ name: '', description: '', imageUrl: '', startDate: '', endDate: '', startTime: '', endTime: '' });
     const { name, description, imageUrl, startDate, endDate, startTime, endTime } = userData;
     const [errors, setErrors] = useState({});
+    const [loader, setLoader] = useState(false);
+    const history = useHistory();
+    const adminToken = localStorage.getItem('token');
+
     const handleChange = event => {
         const { name, value } = event.target;
         if (event.target.files && event.target.files[0]) {
@@ -24,6 +31,7 @@ const CreateMission = () => {
     }
 
     const validate = () => {
+        const imageURL = URL.createObjectURL(imageUrl && imageUrl)
         const _errors = {};
         if (isEmpty(name)) {
             _errors.name = 'Please enter name.';
@@ -40,7 +48,7 @@ const CreateMission = () => {
         if (isEmpty(endDate)) {
             _errors.endDate = 'Please enter end date.';
         }
-        if (isEmpty(imageUrl)) {
+        if (isEmpty(imageURL)) {
             _errors.imageUrl = 'Please upload image.';
         }
         if (isEmpty(description)) {
@@ -52,10 +60,33 @@ const CreateMission = () => {
     const _createMission = () => {
         const errors = validate();
         if (isEmpty(errors)) {
-            // login(userData);
+            setLoader(true);
+            var formData = new FormData();
+            formData.append("name", name);
+            formData.append("caption", description);
+            formData.append("image", imageUrl);
+            formData.append("eventId", history?.location?.state?.row?._id);
+            formData.append("startDate", startDate + ` ${startTime}`);
+            formData.append("endDate", endDate + ` ${endTime}`);
+            const headers = {
+                Authorization: `Bearer ${adminToken}`,
+            };
+            axios.post(API_URL_ADMIN + 'admin/mission/add', formData, { headers: headers })
+                .then(res => {
+                    setLoader(false);
+                    history.push('/admin/missions')
+                })
+                .catch(err => {
+                    setErrors({
+                        'err': err?.data?.message
+                    })
+                    setLoader(false);
+                })
         }
         setErrors(errors || {});
     }
+
+    console.log(history?.location?.state?.row)
     return (
         <>
             <Navbar />
@@ -67,6 +98,12 @@ const CreateMission = () => {
                     <section className="createItemContainer container mx-auto px-24 lg:px-99 mt-28 mb-100  w-full">
                         <h3 className="text-40 font-semibold text-left my-42">Add New Mission</h3>
                         <p className="caption-text mb-16 flex items-start gap-1"><BsAsterisk className="text-8 text-red-600 relative top-1" /> Required fields</p>
+                        <div className='mb-18 w-4/4'>
+                            <label className="text-gray-800 font-medium" htmlFor="#">Select Event</label> <br />
+                            <select disabled name="category" className='w-full py-18 pl-18 text-14 pr-16 mt-8'>
+                                <option value={history?.location?.state?.row?.name}>{history?.location?.state?.row?.name}</option>
+                            </select>
+                        </div>
                         <Input
                             className="mb-22"
                             label="Mission name"
@@ -82,7 +119,7 @@ const CreateMission = () => {
                             <textarea
                                 className={`w-full py-18 text-14 px-16 h-176 ${errors?.description && 'input-error'}`}
                                 placeholder='Provide a detailed description of your item.'
-                                name="describtion"
+                                name="description"
                                 value={description}
                                 onChange={handleChange}
                                 errorMessage={errors?.description}
@@ -99,6 +136,7 @@ const CreateMission = () => {
                                     className={`absolute inset-0 opacity-0 cursor-pointer`}
                                     type="file"
                                     name='imageUrl'
+                                    onChange={handleChange}
                                     accept=" .jpg , .jpeg , .png , .gif, .mp4, .mp3, .mpeg, .mov, video/quicktime"
                                 />
                                 {imageUrl ?
@@ -155,21 +193,13 @@ const CreateMission = () => {
                                 errorMessage={errors?.endTime}
                             />
                         </div>
-                        <div className='mb-18 w-4/4'>
-                            <label className="text-gray-800 font-medium" htmlFor="#">Select Event</label> <br />
-                            <select name="category" className='w-full py-18 pl-18 text-14 pr-16 mt-8'>
-                                <option value="Collectibles">Collectibles</option>
-                                <option value="Domain Names">Domain Names</option>
-                                <option value="Music">Music</option>
-                                <option value="Photography">Photography</option>
-                                <option value="Sports">Sports</option>
-                                <option value="Trading Cards">Trading Cards</option>
-                                <option value="Utility">Utility</option>
-                                <option value="Virtual World">Virtual World</option>
-                            </select>
-                        </div>
                         <hr />
-                        <button onClick={() => _createMission()} className="bg-red-500 text-white px-32 py-10 mt-52 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px"> Create Mission </button>
+                        {loader ?
+                            <button className="bg-red-500 text-white px-32 py-10 mt-52 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px">
+                                <div className='loader'></div>
+                            </button>
+                            : <button onClick={() => _createMission()} className="bg-red-500 text-white px-32 py-10 mt-52 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px"> Create Mission </button>
+                        }
                     </section>
                 </section>
             </main>

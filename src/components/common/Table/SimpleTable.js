@@ -11,33 +11,8 @@ import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import Paper from '@mui/material/Paper';
 import { visuallyHidden } from '@mui/utils';
-import { Link } from 'react-router-dom';
-
-function createData(name, des, sDateTime, eDateTime, protein) {
-    return {
-        name,
-        des,
-        sDateTime,
-        eDateTime,
-        protein,
-    };
-}
-
-const rows = [
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Donut', 452, 25.0, 51, 4.9),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-    createData('Honeycomb', 408, 3.2, 87, 6.5),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Jelly Bean', 375, 0.0, 94, 0.0),
-    createData('KitKat', 518, 26.0, 65, 7.0),
-    createData('Lollipop', 392, 0.2, 98, 0.0),
-    createData('Marshmallow', 318, 0, 81, 2.0),
-    createData('Nougat', 360, 19.0, 9, 37.0),
-    createData('Oreo', 437, 18.0, 63, 4.0),
-];
+import { useHistory } from 'react-router-dom';
+import moment from 'moment';
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -77,19 +52,19 @@ const headCells = [
         label: 'Name',
     },
     {
-        id: 'des',
-        numeric: true,
+        id: 'description',
+        numeric: false,
         disablePadding: false,
         label: 'Description',
     },
     {
-        id: 'sDateTime',
+        id: 'startDate',
         numeric: true,
         disablePadding: false,
         label: 'Start (Date | Time)',
     },
     {
-        id: 'eDateTime',
+        id: 'endDate',
         numeric: true,
         disablePadding: false,
         label: 'End (Date | Time)',
@@ -102,17 +77,46 @@ const headCells = [
     },
 ];
 
+const headCellsMission = [
+    {
+        id: 'name',
+        numeric: false,
+        disablePadding: true,
+        label: 'Name',
+    },
+    {
+        id: 'caption',
+        numeric: false,
+        disablePadding: false,
+        label: 'Caption',
+    },
+    {
+        id: 'startDate',
+        numeric: true,
+        disablePadding: false,
+        label: 'Start (Date | Time)',
+    },
+    {
+        id: 'endDate',
+        numeric: true,
+        disablePadding: false,
+        label: 'End (Date | Time)',
+    },
+];
+
 function SimpleTable(props) {
     const { order, orderBy, onRequestSort } =
         props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
     };
+    const history = useHistory();
+    const searchURL = history.location?.pathname?.split('/')
 
     return (
         <TableHead>
             <TableRow>
-                {headCells.map((headCell) => (
+                {(searchURL?.includes('missions') ? headCellsMission : headCells).map((headCell) => (
                     <TableCell
                         key={headCell.id}
                         align={'center'}
@@ -147,13 +151,15 @@ SimpleTable.propTypes = {
     rowCount: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable() {
+export default function EnhancedTable({ rows, loader }) {
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('name');
     const [selected, setSelected] = React.useState([]);
     const [page, setPage] = React.useState(0);
     const [dense, /*setDense*/] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const history = useHistory();
+    const searchURL = history.location?.pathname
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -198,16 +204,9 @@ export default function EnhancedTable() {
         setPage(0);
     };
 
-    // const handleChangeDense = (event) => {
-    //     setDense(event.target.checked);
-    // };
-
     const isSelected = (name) => selected.indexOf(name) !== -1;
-
-    // Avoid a layout jump when reaching the last page with empty rows.
     const emptyRows =
         page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
-
     return (
         <Box sx={{ width: '100%' }}>
             <Paper sx={{ width: '100%', mb: 2 }}>
@@ -224,9 +223,10 @@ export default function EnhancedTable() {
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
                             rowCount={rows.length}
+                            searchURL
                         />
                         <TableBody>
-                            {stableSort(rows, getComparator(order, orderBy))
+                            {!loader && stableSort(rows, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);
@@ -239,7 +239,7 @@ export default function EnhancedTable() {
                                             role="checkbox"
                                             aria-checked={isItemSelected}
                                             tabIndex={-1}
-                                            key={row.name}
+                                            key={row._id}
                                             selected={isItemSelected}
                                         >
                                             <TableCell
@@ -250,12 +250,29 @@ export default function EnhancedTable() {
                                             >
                                                 {row.name}
                                             </TableCell>
-                                            <TableCell padding="2px">{row.des}</TableCell>
-                                            <TableCell padding="2px">{row.sDateTime}</TableCell>
-                                            <TableCell padding="2px">{row.eDateTime}</TableCell>
-                                            <TableCell padding="2px">
-                                                <Link to="/admin/create-mission"> <button className="bg-red-500 text-white px-22 py-6 rounded-5 transition-all flex items-center justify-center gap-3 hover:bg-red-600 relative top-0 hover:top-px" > Manage </button> </Link>
-                                            </TableCell>
+                                            <TableCell padding="2px">{row.description ? row.description : row?.caption}</TableCell>
+                                            <TableCell padding="2px">{moment.utc(row.startDate).format('MM/DD/YYYY HH:mm:ss')}</TableCell>
+                                            <TableCell padding="2px">{moment.utc(row.endDate).format('MM/DD/YYYY HH:mm:ss')}</TableCell>
+                                            {searchURL?.includes('events') &&
+                                                <TableCell padding="2px">
+                                                    {console.log(new Date(moment.utc(row.startDate).format('YYYY-MM-DD')).getTime() >= new Date().getTime())}
+                                                    {/* <Link to="/admin/create-mission"> */}
+                                                    {((new Date(moment.utc(row.startDate).format('YYYY-MM-DD')).getTime() >= new Date().getTime())
+                                                        || (new Date(moment.utc(row.startDate).format('MM/DD/YYYY')).setHours(0, 0, 0, 0) == (new Date().setHours(0, 0, 0, 0)))) &&
+                                                        <button
+                                                            onClick={() => history.push({
+                                                                pathname: '/admin/create-mission',
+                                                                state: {
+                                                                    'row': row
+                                                                }
+                                                            })}
+                                                            className="bg-red-500 text-white px-22 py-6 rounded-5 transition-all flex items-center justify-center gap-3 hover:bg-red-600 relative top-0 hover:top-px" >
+                                                            Manage
+                                                        </button>
+                                                    }
+                                                    {/* </Link> */}
+                                                </TableCell>
+                                            }
                                         </TableRow>
                                     );
                                 })}
@@ -268,6 +285,7 @@ export default function EnhancedTable() {
                                     <TableCell colSpan={6} />
                                 </TableRow>
                             )}
+                            {!loader && rows?.length < 1 && <TableRow align="center">No Recorde</TableRow>}
                         </TableBody>
                     </Table>
                 </TableContainer>
