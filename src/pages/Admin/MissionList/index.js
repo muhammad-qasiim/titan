@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../../../Component/Admin/Navbar';
 import Sidebar from '../../../Component/Admin/Sidebar';
 import SimpleTable from '../../../components/common/Table/SimpleTable';

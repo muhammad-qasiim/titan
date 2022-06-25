@@ -1,23 +1,32 @@
+import axios from 'axios';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Input from '../../Component/Common/Input'
+import { API_URL } from '../../utils/contant';
 import isEmpty from '../../utils/isEmpty';
+import validateEmail from '../../utils/validate';
 import ForgetPassword from './ForgetPassword';
 
 const SignIn = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const [userData, setUserData] = useState({ username: '', password: '' });
-    const { username, password } = userData;
+    const [userData, setUserData] = useState({ email: '', password: '' });
+    const { email, password } = userData;
     const [errors, setErrors] = useState({});
+    const [loader, setLoader] = useState(false);
+    const history = useHistory();
 
     const handleChange = e => {
         setUserData({ ...userData, [e.target.name]: e.target.value });
+        setErrors({...errors, [e.target.name]: ''})
     }
 
     const validate = () => {
         const _errors = {};
-        if (isEmpty(username)) {
-            _errors.username = 'Please enter username.';
+        if (isEmpty(email)) {
+            _errors.email = 'Please enter email.';
+        }
+        else if (!validateEmail(email)) {
+            _errors.email = 'It must be a valid email.';
         }
         if (isEmpty(password)) {
             _errors.password = 'Please enter password.';
@@ -28,7 +37,17 @@ const SignIn = () => {
     const _login = () => {
         const errors = validate();
         if (isEmpty(errors)) {
-            // login(userData);
+            setLoader(true);
+            axios.post(API_URL + 'signin', userData)
+                .then(res => {
+                    localStorage.setItem('token', res?.data?.token);
+                    setLoader(false);
+                    history.push('/')
+                })
+                .catch(err => {
+                    setErrors({ "err": err?.response?.data?.message })
+                    setLoader(false);
+                })
         }
         setErrors(errors || {});
     }
@@ -40,15 +59,17 @@ const SignIn = () => {
                 <main className='auth-container max-w-md mx-auto'>
                     <span className="self-center logo text-xl text-red-500 mb-26 w-full font-semibold whitespace-nowrap flex items-center justify-center gap-2">
                         <img className="w-36" src="assets/image/beglobal.svg" alt="" />
-                        Titan</span>
+                        Titan
+                    </span>
+                    {errors?.err && <p className="text-red-700 text-10 mt-4 ml-2 mb-15 w-full flex items-center justify-center "> {errors?.err} </p>}
                     <div className='w-full'>
                         <Input
-                            placeholder='Username'
-                            value={username}
-                            name='username'
+                            placeholder='Email'
+                            value={email}
+                            name='email'
                             type="text"
                             handleChange={handleChange}
-                            errorMessage={errors?.username}
+                            errorMessage={errors?.email}
                             className='mb-16'
                         />
                         <Input
@@ -61,7 +82,12 @@ const SignIn = () => {
                             className='mb-16'
                         />
                     </div>
-                    <button onClick={() => _login()} className="bg-red-500 text-white w-full mb-18 px-32 h-38 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px" >Sign In</button>
+                    {loader ?
+                        <button type='button' className="bg-red-500 text-white w-full mb-18 px-32 h-38 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px" >
+                            <div className="loader"></div>
+                        </button>
+                        : <button type='button' onClick={() => _login()} className="bg-red-500 text-white w-full mb-18 px-32 h-38 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px" >Sign In</button>
+                    }
                     <div className='flex items-center justify-between'>
                         <div className='flex items-center gap-2'>
                             <input type="checkbox" />

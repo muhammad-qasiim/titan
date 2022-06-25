@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import Layout from "./Component/Common/Layout";
 import store from './store';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import React, { useEffect } from 'react';
 // import Marketplace from "./pages/Marketplace/Marketplace";
 import SignIn from "./pages/Auth/SignIn.js";
@@ -15,7 +15,7 @@ import SelectLingo from "./pages/SelectLingo";
 import Events from "./pages/Events";
 // import { useEffect } from "react";
 import Web3 from "web3";
-import { Web3ReactProvider } from '@web3-react/core'
+import { Web3ReactProvider } from '@web3-react/core';
 import AdminSignIn from "./pages/Admin/Auth/Login";
 import AdminLayout from "./Component/Common/AdminLayout";
 import { useHistory } from "react-router-dom";
@@ -45,7 +45,7 @@ function App() {
     } else if (url) {
       history.push('/admin/signin');
     }
-  }, [history, url, adminToken])
+  }, [history, url, adminToken, urlCheck])
 
   return (
     <Provider store={store}>

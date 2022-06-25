@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Input from '../../../Component/Common/Input';
 import { API_URL_ADMIN } from '../../../utils/contant';
 import isEmpty from '../../../utils/isEmpty';
+import validateEmail from '../../../utils/validate';
 
 const AdminSignIn = () => {
     const [userData, setUserData] = useState({ email: '', password: '' });
@@ -14,12 +15,16 @@ const AdminSignIn = () => {
 
     const handleChange = e => {
         setUserData({ ...userData, [e.target.name]: e.target.value });
+        setErrors({...errors, [e.target.name]: ''});
     }
 
     const validate = () => {
         const _errors = {};
         if (isEmpty(email)) {
             _errors.email = 'Please enter email.';
+        }
+        else if (!validateEmail(email)) {
+            _errors.email = 'It must be a valid email.';
         }
         if (isEmpty(password)) {
             _errors.password = 'Please enter password.';

@@ -27,7 +27,7 @@ const CreateEvent = () => {
         } else {
             setUserData({ ...userData, [name]: value });
         }
-        setErrors({});
+        setErrors({...errors, [event.target.name]: ''})
     }
 
     const validate = () => {
