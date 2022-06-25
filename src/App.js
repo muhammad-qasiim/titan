@@ -32,11 +32,16 @@ function getLibrary(provider) {
 function App() {
   const history = useHistory();
   const url = history?.location?.pathname?.split('/')?.includes('admin');
+  const urlCheck = history?.location?.pathname?.split('/');
   const adminToken = localStorage.getItem('token');
 
   useEffect(() => {
     if (url && adminToken) {
-      history.push('/admin/dashboard');
+      if (urlCheck?.includes('dashboard')) {
+        history.push('/admin/dashboard');
+      } else {
+        history.push(history?.location?.pathname);
+      }
     } else if (url) {
       history.push('/admin/signin');
     }
