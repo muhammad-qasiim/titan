@@ -10,19 +10,29 @@ import { BiSearch } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { BiWallet } from "react-icons/bi";
 import { useTranslation } from 'react-multi-lang';
+import WalletModel from '../../components/common/WalletModel';
+import { useWeb3React } from '@web3-react/core';
 
 const Navbar = () => {
     const t = useTranslation()
     const [toggleSidebar, setToggleSidebar] = useState(false);
     const [toggleSearch, setToggleSearch] = useState(false);
     const [toggleSidebarNav, setToggleSidebarNav] = useState(false);
+    const userInfo = JSON.parse(localStorage.getItem('login_user'));
+    const { account } = useWeb3React();
 
+    const [open, setOpen] = useState(false);
+    const handleClose = () => {
+        setOpen(false)
+    }
     const [activeLink, setActiveLink] = useState('Trending');
-    const Navigation = [{ placeholder: 'Home', path: '/home' }, { placeholder: 'Events', path: '/events' }, { placeholder: 'Airdrop Challenge', path: '/challenge' }, { placeholder: 'Profile', path: '/profile' },]
+    const Navigation = [{ placeholder: 'Home', path: '/home' }, { placeholder: 'Events', path: '/events' }, { placeholder: 'Airdrop Challenge', path: '/challenge' },
+        // { placeholder: 'Profile', path: '/profile' },
+    ]
 
     return (
         <>
-
+            <WalletModel open={open} handleClose={handleClose}/>
             <nav className="sticky h-71 top-0 bg-white shadow-xl" style={{ zIndex: '999' }}>
                 <div className="flex h-71 justify-between items-center mx-auto px-24 lg:px-99">
                     <Link to="/home">
@@ -71,19 +81,29 @@ const Navbar = () => {
                                     </li>
                                 ))
                             }
-                            <Link to="/signin">
+                            <Link to={userInfo?.token ? '/profile' : "/signin"}>
                                 <li onClick={() => setActiveLink('')}>
                                     <span className='relative text-3xl border-b-2 border-transparent cursor-pointer transition-all text-gray-500 hover:text-gray-800'>
                                         <CgProfile />
                                     </span>
                                 </li>
                             </Link>
-
-                            <li>
-                                <span onClick={() => { setToggleSidebar(!toggleSidebar); setActiveLink('') }} className='relative text-3xl border-b-2 border-transparent cursor-pointer transition-all text-gray-500 hover:text-gray-800'>
-                                    <BiWallet />
-                                </span>
-                            </li>
+                            {account ?
+                                <li>
+                                    <button className="bg-red-500 w-full md:w-auto text-white whitespace-nowrap px-32 py-10 rounded-5 transition-all hover:bg-red-600 relative top-0 hover:top-px">
+                                        {account.slice(0, 6)}...
+                                    </button>
+                                </li> :
+                                <li>
+                                    <span
+                                        // onClick={() => { setToggleSidebar(!toggleSidebar); 
+                                        // setActiveLink('') }} 
+                                        onClick={() => setOpen(true)}
+                                        className='relative text-3xl border-b-2 border-transparent cursor-pointer transition-all text-gray-500 hover:text-gray-800'>
+                                        <BiWallet />
+                                    </span>
+                                </li>
+                            }
                         </ul>
                     </div>
                     <Sidebar toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar} />

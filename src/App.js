@@ -27,6 +27,7 @@ import MissionList from "./pages/Admin/MissionList";
 import { setTranslations, setDefaultLanguage } from 'react-multi-lang';
 import th from './language/th.json'
 import en from './language/en.json'
+import isEmpty from "./utils/isEmpty";
 
 function getLibrary(provider) {
   return new Web3(provider)
@@ -40,6 +41,7 @@ function App() {
   const url = history?.location?.pathname?.split('/')?.includes('admin');
   const urlCheck = history?.location?.pathname?.split('/');
   const adminToken = localStorage.getItem('token');
+  const userInfo = JSON.parse(localStorage.getItem('login_user'));
 
   useEffect(() => {
     if (url && adminToken) {
@@ -52,6 +54,15 @@ function App() {
       history.push('/admin/signin');
     }
   }, [history, url, adminToken, urlCheck])
+
+  useEffect(() => {
+    if ((urlCheck[1] === 'signin' || urlCheck[1] === 'signup') && userInfo?.token) {
+      history.push('/');
+    } 
+    if (urlCheck[1] === 'profile' && isEmpty(userInfo?.token)) {
+      history.push('/signin');
+    }
+  }, [urlCheck, userInfo])
 
   return (
     <Provider store={store}>

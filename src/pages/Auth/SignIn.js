@@ -40,9 +40,10 @@ const SignIn = () => {
             setLoader(true);
             axios.post(API_URL + 'signin', userData)
                 .then(res => {
-                    localStorage.setItem('token', res?.data?.token);
+                    localStorage.setItem('login_user', JSON.stringify(res?.data));
                     setLoader(false);
                     history.push('/')
+                    window.location.reload();
                 })
                 .catch(err => {
                     setErrors({ "err": err?.response?.data?.message })
@@ -55,7 +56,6 @@ const SignIn = () => {
     return (
         <>
             <section className='my-99'>
-
                 <main className='auth-container max-w-md mx-auto'>
                     <span className="self-center logo text-xl text-red-500 mb-26 w-full font-semibold whitespace-nowrap flex items-center justify-center gap-2">
                         <img className="w-36" src="assets/image/beglobal.svg" alt="" />

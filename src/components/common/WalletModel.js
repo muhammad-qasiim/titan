@@ -50,7 +50,7 @@ const WalletModel = ({ open, handleClose }) => {
 
   return (
     <>
-      <Dialog open={open}>
+      <Dialog open={open} onClose={handleClose}>
         <div style={{ borderRadius: "5px", display: 'flex', padding: '35px' }}>
           <div className="top_row" style={{ borderRadius: "5px", display: 'flex' }}>
             <div className="left"
