@@ -3,15 +3,24 @@ import { useState } from 'react'
 import { GoVerified } from "react-icons/go";
 import { BsCollection } from "react-icons/bs";
 import { AiOutlineTag, AiOutlineHeart, AiOutlineFormatPainter, AiOutlineUnorderedList } from "react-icons/ai";
-
+import WalletModel from '../../components/common/WalletModel';
 import CollectionItem from '../../Component/Common/CollectionItems'
+import { useWeb3React } from '@web3-react/core';
 
 function Create() {
-    const [activeLink, setActiveLink] = useState('Collected')
+    const [activeLink, setActiveLink] = useState('Collected');
+    const { account } = useWeb3React();
+
+    const [open, setOpen] = useState(false);
+    const handleClose = () => {
+        setOpen(false)
+    }
     const Collections = ["Collected", "Favourited", "Offers Made", "Offers Received", "Active Listings",]
 
     return (
         <>
+            <WalletModel open={open} handleClose={handleClose}/>
+
             <header className="bg-black bg-center bg-cover w-full"
                 style={{ backgroundImage: 'url(assets/image/join_bg_bc.webp)' }}
             >
@@ -27,7 +36,17 @@ function Create() {
 
             <section className="container mx-auto px-24 lg:px-99 my-72 text-center">
                 <h3 className="text-28 font-semibold text-gray-800 text-center mb-18 flex items-center gap-2 justify-center">Titans Club <GoVerified className="text-blue-500 text-22" /> </h3>
-                <h5 className="flex items-center gap-2 text-gray-700 justify-center mb-14">Wallet Address: <span className="text-red-500 cursor-pointer hover:underline transition-all hover:text-red-700"> Connect Wallet to profile</span> </h5>
+                <h5 className="flex items-center gap-2 text-gray-700 justify-center mb-14">Wallet Address:
+                    {account ?
+                        <span className="text-red-500 cursor-pointer hover:underline transition-all hover:text-red-700">
+                            {account}
+                        </span>
+                        :
+                        <span className="text-red-500 cursor-pointer hover:underline transition-all hover:text-red-700" onClick={() => setOpen(true)}>
+                            Connect Wallet to profile
+                        </span>
+                    }
+                </h5>
                 {/* <h5 className="flex items-center gap-2 text-gray-700 justify-center mb-14">Created by <span className="text-red-500 cursor-pointer transition-all hover:text-red-700"> Billionaireclub_LLC</span> <GoVerified className="text-blue-500 text-14" /> </h5> */}
 
                 {/* <p className="text-18 w-full md:w-2/4 mx-auto font-light" style={{ color: '#707a83' }}>

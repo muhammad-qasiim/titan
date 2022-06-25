@@ -24,12 +24,18 @@ import CreateEvent from "./pages/Admin/CreateEvent";
 import EventList from "./pages/Admin/EventList";
 import CreateMission from "./pages/Admin/CreateMission";
 import MissionList from "./pages/Admin/MissionList";
+import { setTranslations, setDefaultLanguage } from 'react-multi-lang';
+import th from './language/th.json'
+import en from './language/en.json'
 
 function getLibrary(provider) {
   return new Web3(provider)
 }
 
 function App() {
+  const selectedLanguage = localStorage.getItem('lang')
+  setTranslations({th, en});
+  setDefaultLanguage(selectedLanguage ? selectedLanguage : 'en');
   const history = useHistory();
   const url = history?.location?.pathname?.split('/')?.includes('admin');
   const urlCheck = history?.location?.pathname?.split('/');

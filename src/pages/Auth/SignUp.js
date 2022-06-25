@@ -65,8 +65,25 @@ const SignUp = () => {
 
     const _signup = () => {
         const errors = validate();
+        const userInfo = {
+            'email': email,
+            'username': username,
+            'password': password,
+            'verificationCode': verificationCode
+        }
         if (isEmpty(errors)) {
-            // login(userData);
+            setLoader(true);
+            axios.post(API_URL + 'signup', userInfo)
+                .then(res => {
+                    setLoader(false);
+                    history.push('/signin')
+                    setVerification(true);
+                })
+                .catch(err => {
+                    console.log("lo", err)
+                    setErrors({ "err": err?.response?.data?.Message ? err?.response?.data?.Message : err?.response?.data?.message })
+                    setLoader(false);
+                })
         }
         setErrors(errors || {});
     }
@@ -97,7 +114,8 @@ const SignUp = () => {
                 <main className='auth-container max-w-md mx-auto'>
                     <span className="self-center logo text-xl text-red-500 mb-26 w-full font-semibold whitespace-nowrap flex items-center justify-center gap-2">
                         <img className="w-36" src="assets/image/beglobal.svg" alt="" />
-                        Titan</span>
+                        Titan
+                    </span>
                     {errors?.err && <p className="text-red-700 text-10 mt-4 ml-2 mb-15 w-full flex items-center justify-center "> {errors?.err} </p>}
                     <div className='w-full'>
                         {verification ?

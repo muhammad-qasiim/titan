@@ -9,8 +9,10 @@ import SidebarNav from './SidebarNav';
 import { BiSearch } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { BiWallet } from "react-icons/bi";
+import { useTranslation } from 'react-multi-lang';
 
 const Navbar = () => {
+    const t = useTranslation()
     const [toggleSidebar, setToggleSidebar] = useState(false);
     const [toggleSearch, setToggleSearch] = useState(false);
     const [toggleSidebarNav, setToggleSidebarNav] = useState(false);
@@ -26,7 +28,8 @@ const Navbar = () => {
                     <Link to="/home">
                         <span className="self-center logo text-xl text-red-500 font-semibold whitespace-nowrap flex items-center gap-2">
                             <img className="w-36" src="assets/image/beglobal.svg" alt="" />
-                            Titan</span>
+                            {t('Titan')}
+                        </span>
                     </Link>
 
                     <div className="flex xl:order-1">
