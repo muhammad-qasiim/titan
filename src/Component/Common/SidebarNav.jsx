@@ -21,7 +21,7 @@ const SidebarNav = ({ toggleSidebarNav, setToggleSidebarNav }) => {
                                     <CgProfile />
                                 </span>
                             </li>
-                        </Link>
+                        </Link> 
                         {
                             Navigation?.map(item => (
                                 <li className='mb-12' onClick={() => setToggleSidebarNav(false)}>
