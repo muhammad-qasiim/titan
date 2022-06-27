@@ -17,7 +17,7 @@ const EventList = () => {
 
     const _getList = () => {
         const headers = {
-            Authorization: `Bearer ${adminToken}`,
+            Authorization: `Bearer ${adminToken}`, 
         };
         axios.get(API_URL_ADMIN + 'admin/events', { headers: headers })
             .then(res => {
