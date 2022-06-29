@@ -6,7 +6,9 @@ const Header = () => {
     return (
         <>
         <section className="relative">
-            <div className="showcase w-full absolute inset-0">
+            <div
+            style={{ backgroundImage: 'url(assets/bg.jpeg)' }}
+            className="showcase w-full absolute inset-0">
             </div>
             <header className="container mx-auto px-24 lg:px-99 py-99">
                 <section className="flex flex-col xl:flex-row items-center gap-6">
@@ -25,7 +27,7 @@ const Header = () => {
                             <div className="relative my-18 px-14 w-full lg:my-12 lg:px-14">
                                 <article className="showcase-header cursor-pointer overflow-hidden rounded-lg shadow-lg">
                                     <section className="relative">
-                                        <img alt="Placeholder" className="block h-auto w-full" src="assets/image/nft.jpg" />
+                                        <img alt="Placeholder" className="block h-323 object-cover object-center w-full" src="assets/image/nft.jpg" />
                                     </section>
                                     <footer className='flex items-center justify-between py-22 px-12'>
                                         <section className='flex items-center gap-4'>

@@ -13,8 +13,8 @@ function Create() {
 
             <section className="container mx-auto px-30 md:px-62 py-52 mb-54">
                 <main className='flex flex-col items-center lg:flex-row gap-5 lg:gap-9 justify-between'>
-                    <div className="w-full">
-                        <ReactPlayer url='https://www.youtube.com/watch?v=Wk7QpuWVpNQ' />
+                    <div className="video-rounded w-full rounded-5">
+                        <ReactPlayer playing={true} loop={true} controls={false} muted={true} url='https://www.youtube.com/watch?v=0xL1eeoO-9U&ab_channel=WatchMk' />
                     </div>
                     <div className="w-full">
                         <h3 className="font-semibold text-24 lg:text-28 mb-10 text-black leading-58">Discover, collect, and sell extraordinary NFTs</h3>

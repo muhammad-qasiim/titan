@@ -256,7 +256,7 @@ export default function EnhancedTable({ rows, loader }) {
                                             {searchURL?.includes('events') &&
                                                 <TableCell padding="2px">
                                                     {((new Date(moment.utc(row.startDate).format('YYYY-MM-DD')).getTime() >= new Date().getTime())
-                                                        || (new Date(moment.utc(row.startDate).format('MM/DD/YYYY')).setHours(0, 0, 0, 0) == (new Date().setHours(0, 0, 0, 0)))) &&
+                                                        || (new Date(moment.utc(row.startDate).format('MM/DD/YYYY')).setHours(0, 0, 0, 0) === (new Date().setHours(0, 0, 0, 0)))) &&
                                                         <button
                                                             onClick={() => history.push({
                                                                 pathname: '/admin/create-mission',

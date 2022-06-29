@@ -5,7 +5,7 @@ import { injected, walletconnect } from "../../components/wallet/connector";
 import { Dialog } from "@mui/material";
 
 const WalletModel = ({ open, handleClose }) => {
-  const { active, account, library, connector, activate, deactivate } = useWeb3React();
+  const { active, account, library, activate, deactivate } = useWeb3React();
   const data = useWeb3React();
   const [modalShow, setModalShow] = useState(true);
   const [should, setShould] = useState(false)

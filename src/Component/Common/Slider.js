@@ -11,10 +11,8 @@ const Slider = () => {
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={3}
-                    centeredSlides
-                    Navigation
-                    onSlideChange={() => console.log("slide change")}
-                    onSwiper={swiper => console.log(swiper)}
+                    initialSlide={4}
+                    centeredSlides={true}
                 >
                     {
                         [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]?.map((item => (

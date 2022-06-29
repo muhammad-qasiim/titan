@@ -9,9 +9,9 @@ const Footer = () => {
             <section className="container mx-auto px-24 lg:px-99 py-60">
 
                 <div className="md:flex w-full md:justify-between border-b pb-42 border-gray-500">
-                    <div className="md:mb-0 w-auto md:w-2/6 mb-24">
+                    <div className="md:mb-0 w-auto mb-24">
                         <Link to="/">
-                            <h6 className="text-2xl logo font-semibold text-white mb-8 flex items-center gap-2">
+                            <h6 className="text-2xl logo font-semibold text-white mb-2 flex items-center gap-2">
                             TITAN</h6>
                         </Link>
                         <br />
@@ -57,7 +57,7 @@ const Footer = () => {
                 </div>
             </section>
 
-            <section className="container mx-auto px-24 lg:px-99 pt-16 pb-42 md:flex md:items-center text-center md:justify-between">
+            <section className="container mx-auto px-24 lg:px-99 pb-42 md:flex md:items-center text-center md:justify-between">
                 <span className="text-sm text-gray-400 sm:text-center ml-8">© 2022 TITAN Marketplace™ All Rights Reserved.</span>
                 <div className="flex mt-4 space-x-6 justify-center md:mt-0">
                     <span className="cursor-pointer text-gray-400 text-14 hover:underline transition-all">Privacy Policy</span>

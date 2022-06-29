@@ -1,6 +1,5 @@
 import { InjectedConnector } from '@web3-react/injected-connector';
 import {
-    UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
     WalletConnectConnector,
 } from "@web3-react/walletconnect-connector";
 

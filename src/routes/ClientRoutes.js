@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Redirect, Route, Switch, useHistory, withRouter } from 'react-router-dom';
+import { Route, Switch, useHistory, withRouter } from 'react-router-dom';
 import AdminLayout from '../Component/Common/AdminLayout';
 import AdminSignIn from '../pages/Admin/Auth/Login';
 import CreateEvent from '../pages/Admin/CreateEvent';

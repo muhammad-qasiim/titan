@@ -129,16 +129,18 @@ textarea:focus-visible{
   background-color: rgb(251, 253, 255);
 }
 
+.video-rounded video{
+  overflow: hidden;
+}
+
 .showcase{
-  /* background-image: url(/public/assets/bg.jpeg); */
   background-repeat: no-repeat;
   background-size: cover;
-
   background-color: rgb(255, 255, 255);
   background-position: center center;
   opacity: 0.3;
   filter: blur(8px);
-  /* -webkit-mask: linear-gradient(rgb(255, 255, 255), transparent); */
+  -webkit-mask: linear-gradient(rgb(255, 255, 255), transparent);
 }
   
   .showcase-header:hover{
